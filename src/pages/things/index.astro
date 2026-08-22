@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ThingCard from "../../components/ThingCard.astro";
+import { compareThings, statusLabels, statusOrder } from "../../status";
+
+const things = (await getCollection("things", ({ data }) => !data.draft)).sort(compareThings);
+const activeStatuses = statusOrder.filter((status) => things.some(({ data }) => data.status === status));
+---
+
+<BaseLayout title="小事" description="Calvin 做过的项目、实验、系统、播客与写作。">
+  <section class="archive-head page-shell">
+    <p class="eyebrow">全部收藏 · The full collection</p>
+    <h1 class="display-title">尝试过的小事，<br /><em>值得记录。</em></h1>
+    <p class="intro-copy">走过的一些印记，或深或浅；尝试过的想法，不想遗忘；未来的可能性，孕育其中...</p>
+  </section>
+
+  <section class="archive-tools page-shell" aria-label="Archive filters">
+    <div class="filter-group" data-filter-group="type">
+      <span>类型</span>
+      <button class="active" data-filter="all" type="button">全部</button>
+      <button data-filter="project" type="button">项目</button>
+      <button data-filter="podcast" type="button">播客</button>
+      <button data-filter="writing" type="button">写作</button>
+      <button data-filter="system" type="button">系统</button>
+      <button data-filter="idea" type="button">想法</button>
+    </div>
+    <div class="filter-group" data-filter-group="status">
+      <span>状态</span>
+      <button class="active" data-filter="all" type="button">全部</button>
+      {statusOrder.map((status) => <button data-filter={status} type="button">{statusLabels[status].zh}</button>)}
+    </div>
+    <p class="result-count" aria-live="polite">共 {things.length} 件</p>
+  </section>
+
+  <section class="archive-list page-shell" aria-label="Things archive">
+    {activeStatuses.map((status) => (
+      <div class="status-group" data-status-group={status}>
+        <div class="status-rail"><span>{statusLabels[status].zh}<small lang="en">{statusLabels[status].en}</small></span><i></i></div>
+        <div class="status-things">
+          {things.filter(({ data }) => data.status === status).map((thing) => <ThingCard thing={thing} showYear />)}
+        </div>
+      </div>
+    ))}
+    <div class="empty-state" hidden>没有符合筛选条件的小事，换个条件试试。</div>
+  </section>
+</BaseLayout>
+
+<script>
+  const state = { type: "all", status: "all" };
+  const cards = Array.from(document.querySelectorAll<HTMLElement>(".thing-card"));
+  const count = document.querySelector<HTMLElement>(".result-count");
+  const empty = document.querySelector<HTMLElement>(".empty-state");
+
+  document.querySelectorAll<HTMLElement>("[data-filter-group]").forEach((group) => {
+    const key = group.dataset.filterGroup as "type" | "status";
+    group.querySelectorAll<HTMLButtonElement>("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state[key] = button.dataset.filter || "all";
+        group.querySelectorAll("button").forEach((item) => item.classList.toggle("active", item === button));
+        let visible = 0;
+        cards.forEach((card) => {
+          const showType = state.type === "all" || card.dataset.type === state.type;
+          const showStatus = state.status === "all" || card.dataset.status === state.status;
+          card.hidden = !(showType && showStatus);
+          if (!card.hidden) visible += 1;
+        });
+        document.querySelectorAll<HTMLElement>("[data-status-group]").forEach((section) => {
+          section.hidden = !section.querySelector(".thing-card:not([hidden])");
+        });
+        if (count) count.textContent = `共 ${visible} 件`;
+        if (empty) empty.hidden = visible !== 0;
+      });
+    });
+  });
+</script>
+
+<style>
+  .archive-head { padding-block: clamp(80px, 11vw, 150px) 76px; }
+  .archive-head .intro-copy { margin: 54px 0 0 28%; }
+  .archive-tools { position: sticky; top: 0; z-index: 10; padding-block: 18px; background: rgba(238, 242, 240, .94); border-block: 1px solid var(--line); backdrop-filter: blur(12px); }
+  .filter-group { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-block: 8px; }
+  .filter-group > span { width: 66px; color: var(--ink-soft); font-family: var(--utility); font-size: 9px; letter-spacing: .11em; text-transform: uppercase; }
+  .filter-group button { padding: 7px 10px; color: var(--ink-soft); background: transparent; border: 1px solid transparent; border-radius: 99px; font: 10px var(--utility); letter-spacing: .04em; cursor: pointer; }
+  .filter-group button:hover { color: var(--ink); border-color: var(--line); }
+  .filter-group button.active { color: var(--paper-raised); background: var(--night); }
+  .result-count { position: absolute; right: 0; top: 27px; margin: 0; color: var(--ink-soft); font: 10px var(--utility); }
+  .archive-list { padding-block: 90px 140px; }
+  .status-group { display: grid; grid-template-columns: 130px 1fr; }
+  .status-rail { position: relative; color: var(--ink-soft); font: 11px var(--utility); }
+  .status-rail span { position: sticky; top: 128px; display: flex; flex-direction: column; gap: 4px; }
+  .status-rail small { font-size: 9px; letter-spacing: .06em; text-transform: uppercase; opacity: .65; }
+  .status-rail i { position: absolute; top: 0; right: 45px; bottom: 0; width: 1px; background: var(--line); }
+  .status-things { min-width: 0; }
+  .empty-state { padding: 80px 0; color: var(--ink-soft); font-family: var(--display); font-size: 30px; text-align: center; }
+  [hidden] { display: none !important; }
+  @media (max-width: 760px) {
+    .archive-head .intro-copy { margin-left: 0; }
+    .archive-tools { position: static; }
+    .result-count { position: static; margin-top: 16px; }
+    .status-group { grid-template-columns: 54px 1fr; }
+    .status-rail i { right: 17px; }
+    .status-rail span { writing-mode: vertical-rl; }
+    .status-rail small { display: none; }
+  }
+</style>

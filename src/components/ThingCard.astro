@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Props {
+  thing: CollectionEntry<"things">;
+  showYear?: boolean;
+}
+
+const { thing, showYear = false } = Astro.props;
+const year = thing.data.started.getFullYear();
+const primaryTitle = thing.data.titleZh || thing.data.title;
+const primarySummary = thing.data.summaryZh || thing.data.summary;
+---
+
+<article class={`thing-card tone-${thing.data.tone}`} data-type={thing.data.type} data-status={thing.data.status} data-year={year}>
+  <a href={`/things/${thing.id}/`} class="thing-card-link" aria-label={`阅读${primaryTitle}`}>
+    <div class="thing-mark" aria-hidden="true">{thing.data.mark}</div>
+    <div class="thing-card-body">
+      <div class="thing-card-meta">
+        <StatusBadge status={thing.data.status} cadence={thing.data.cadence} />
+        {showYear && <time datetime={thing.data.started.toISOString()}>{year}</time>}
+      </div>
+      <h3>{primaryTitle}</h3>
+      {thing.data.titleZh && <p class="thing-title-zh" lang="en">{thing.data.title}</p>}
+      <p class="thing-summary">{primarySummary}</p>
+      <span class="thing-open" aria-hidden="true">打开记录 <span>↗</span></span>
+    </div>
+  </a>
+</article>

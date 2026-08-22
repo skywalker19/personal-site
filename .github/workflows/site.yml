@@ -1,0 +1,69 @@
+name: Check and deploy site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Validate and build
+        run: npm run build
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+      - name: Store static build
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+          if-no-files-found: error
+
+  deploy:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+    concurrency:
+      group: personal-site-production
+      cancel-in-progress: false
+    steps:
+      - name: Download static build
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+      - name: Configure deployment key
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/id_ed25519
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts
+      - name: Upload versioned release
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          RELEASE_ID="${GITHUB_SHA::12}"
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "mkdir -p '$DEPLOY_PATH/releases/$RELEASE_ID'"
+          rsync -az --delete dist/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/releases/$RELEASE_ID/"
+          ssh "$DEPLOY_USER@$DEPLOY_HOST" "test -f '$DEPLOY_PATH/releases/$RELEASE_ID/health.txt' && ln -sfn '$DEPLOY_PATH/releases/$RELEASE_ID' '$DEPLOY_PATH/current'"
+          echo "Deployed release $RELEASE_ID"

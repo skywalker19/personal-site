@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="没有找到">
+  <section class="missing page-shell">
+    <p class="eyebrow">404 · 放错地方了</p>
+    <h1 class="display-title">这件小事<br /><em>不在这里。</em></h1>
+    <p class="intro-copy">它可能搬走了、换了模样，或者还没有进入这份档案。</p>
+    <a href="/things/">返回档案 →</a>
+  </section>
+</BaseLayout>
+<style>
+  .missing { min-height: 70vh; padding-block: 120px; }
+  .missing .intro-copy { margin-block: 54px 34px; }
+  .missing a { font: 11px var(--utility); text-underline-offset: 5px; }
+</style>

@@ -1,0 +1,23 @@
+server {
+    listen 80;
+    server_name 150.109.196.200;
+
+    # Existing static Drip Monitor files live in /var/www/drip-monitor/.
+    location ^~ /drip-monitor/ {
+        root /var/www;
+        index index.html;
+        try_files $uri $uri/ /drip-monitor/index.html;
+    }
+
+    # GitHub Actions updates this symlink after a successful build.
+    location / {
+        root /var/www/personal-site/current;
+        index index.html;
+        try_files $uri $uri/ $uri.html /404.html;
+    }
+
+    location = /health.txt {
+        root /var/www/personal-site/current;
+        access_log off;
+    }
+}

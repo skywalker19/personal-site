@@ -1,0 +1,15 @@
+---
+import { statusLabels, type ThingStatus } from "../status";
+
+interface Props {
+  status: ThingStatus;
+  cadence?: string;
+}
+
+const { status, cadence } = Astro.props;
+---
+
+<span class={`status status-${status}`}>
+  <span class="status-dot" aria-hidden="true"></span>
+  {statusLabels[status].zh}<span class="status-en" lang="en">{statusLabels[status].en}</span>{cadence ? ` · ${cadence}` : ""}
+</span>
