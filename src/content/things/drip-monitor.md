@@ -4,7 +4,7 @@ titleZh: 点滴计时器
 summary: A small mobile tool that estimates an IV drip’s remaining time from visible drops and remaining bag volume.
 summaryZh: 一个移动端小工具，通过观察点滴速度和剩余液量，估算大致还需要多久。
 type: project
-status: maintained
+status: ongoing
 started: 2026-06-01
 updated: 2026-06-02
 featured: true
@@ -13,7 +13,9 @@ language: en
 themes: [健康, 小工具, 移动网页]
 mark: 滴
 tone: green
-links: []
+links:
+  - label: 移动网页
+    url: http://150.109.196.200/drip/
 related: []
 ---
 

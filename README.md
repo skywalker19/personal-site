@@ -44,7 +44,3 @@ npm run publish -- "Add a new Thing"
 ```
 
 The command validates and builds locally, shows the pending changes, asks for confirmation, commits, and pushes. GitHub Actions then deploys a versioned release and switches the nginx `current` symlink.
-
-## Content still needed
-
-`majiang-assistant.md` and `college-evaluation.md` are intentionally hidden drafts. Their project facts were not available in the knowledge vault, so they should not be published until their summaries, dates, status, and artifact links are accurate.
