@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href?: string;
+  linkLabel?: string;
+}
+
+const { title, description, href, linkLabel } = Astro.props;
+---
+
+<section class="archive-empty" aria-labelledby={`empty-${title.replace(/\s+/g, "-")}`}>
+  <p class="archive-empty-mark" aria-hidden="true">· · ·</p>
+  <div>
+    <h2 id={`empty-${title.replace(/\s+/g, "-")}`}>{title}</h2>
+    <p>{description}</p>
+    {href && linkLabel && <a href={href}>{linkLabel} <span aria-hidden="true">→</span></a>}
+  </div>
+</section>
+
+<style>
+  .archive-empty { display: grid; grid-template-columns: minmax(90px, .25fr) 1fr; gap: clamp(24px, 6vw, 80px); padding-block: clamp(64px, 9vw, 112px); border-block: 1px solid var(--line); }
+  .archive-empty-mark { margin: 0; color: var(--ink-soft); font: 18px var(--utility); letter-spacing: .4em; }
+  h2 { margin: 0; font: 400 clamp(30px, 4vw, 46px)/1.15 var(--display); letter-spacing: -.03em; }
+  div > p { max-width: 620px; margin: 20px 0 0; color: var(--ink-soft); line-height: 1.7; }
+  a { display: inline-block; margin-top: 28px; font: 10px var(--utility); letter-spacing: .08em; text-transform: uppercase; text-underline-offset: 5px; }
+  @media (max-width: 560px) { .archive-empty { grid-template-columns: 1fr; } }
+</style>

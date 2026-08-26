@@ -8,7 +8,8 @@ window.PODCAST_STORY = {
   closingTitleHtml: "谢谢每一双<br>愿意听世界的耳朵",
   closingCopy: "这不是终点，只是我们再一次回头看。下一条里程线，仍在声音前方。",
 
-  // Curated highlights only. See SOURCE-NOTES.md for the full inspected inventory.
+  // Curated highlights only. The podcast workspace owns the full evidence inventory
+  // and provenance notes under podcast/11_audience_growth/.
   milestones: [
     {
       date: "2025年11月12日",

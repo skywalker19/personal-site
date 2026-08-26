@@ -121,7 +121,7 @@
 
   data.forEach((point) => {
     const row = document.createElement("tr");
-    [formatDate.format(new Date(point.timestamp)), formatNumber.format(point.plays), formatNumber.format(point.subscribers)].forEach((value) => {
+    [formatDate.format(new Date(point.timestamp)), formatNumber.format(point.plays), formatNumber.format(point.subscribers), point.source].forEach((value) => {
       const cell = document.createElement("td");
       cell.textContent = value;
       row.append(cell);

@@ -8,7 +8,7 @@ const things = (await getCollection("things", ({ data }) => !data.draft)).sort(c
 const activeStatuses = statusOrder.filter((status) => things.some(({ data }) => data.status === status));
 ---
 
-<BaseLayout title="小事" description="Calvin 做过的项目、实验、系统、播客与写作。">
+<BaseLayout title="创客" description="Calvin 作为创客做过的项目、实验、系统、播客与写作。">
   <section class="archive-head page-shell">
     <p class="eyebrow">全部收藏 · The full collection</p>
     <h1 class="display-title">尝试过的小事，<br /><em>值得记录。</em></h1>

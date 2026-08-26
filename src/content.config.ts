@@ -41,4 +41,39 @@ const things = defineCollection({
   }),
 });
 
-export const collections = { things };
+const travelImage = z.object({
+  src: z.string().startsWith("/"),
+  alt: z.string().min(1).optional(),
+  decorative: z.boolean().default(false),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+}).refine((image) => image.decorative || Boolean(image.alt), {
+  message: "Travel images need alt text unless decorative",
+});
+
+const travel = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/travel" }),
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    startDate: z.coerce.date(),
+    endDate: z.coerce.date(),
+    destinations: z.array(z.string().min(1)).min(1),
+    locationContext: z.string().max(180).optional(),
+    themes: z.array(z.string()).default([]),
+    language: z.enum(["zh", "en", "bilingual"]).default("zh"),
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+    hero: travelImage.optional(),
+    gallery: z.array(travelImage).default([]),
+    highlights: z.array(z.string()).default([]),
+    practicalNotes: z.array(z.string()).default([]),
+    transport: z.array(z.string()).default([]),
+    companions: z.array(z.string()).default([]),
+  }).refine((entry) => entry.endDate >= entry.startDate, {
+    message: "endDate must be on or after startDate",
+    path: ["endDate"],
+  }),
+});
+
+export const collections = { things, travel };

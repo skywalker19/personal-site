@@ -1,0 +1,16 @@
+---
+interface Props {
+  count: number;
+  singular: string;
+  plural?: string;
+}
+
+const { count, singular, plural = singular } = Astro.props;
+---
+
+<p class="archive-count"><strong>{count}</strong><span>{count === 1 ? singular : plural}</span></p>
+
+<style>
+  .archive-count { display: inline-flex; align-items: baseline; gap: 8px; margin: 0; color: var(--ink-soft); font: 10px var(--utility); letter-spacing: .08em; text-transform: uppercase; }
+  strong { color: var(--ink); font: 30px var(--display); font-weight: 400; }
+</style>

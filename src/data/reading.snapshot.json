@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-26T06:06:42.286Z",
+  "year": 2026,
+  "current": [
+    {
+      "title": "太白金星有点烦",
+      "author": "马伯庸",
+      "publisher": "湖南文艺出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐",
+      "doubanScore": 9
+    },
+    {
+      "title": "写作是门手艺",
+      "author": "刘军强",
+      "publisher": "广西师范大学出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "教育"
+      ],
+      "language": "中文",
+      "doubanScore": 9
+    },
+    {
+      "title": "Inspired-how to create products customers love",
+      "author": "Marty Cagan",
+      "publisher": "SVPG Press",
+      "country": "🇺🇸",
+      "medium": "纸质书",
+      "types": [
+        "产品"
+      ],
+      "language": "英文",
+      "doubanScore": 8.4
+    },
+    {
+      "title": "富足",
+      "author": "吴军",
+      "country": "🇨🇳"
+    }
+  ],
+  "completedThisYear": [
+    {
+      "title": "蒋经国传",
+      "author": "江南",
+      "publisher": "中国友谊出版公司",
+      "country": "🇺🇸",
+      "medium": "纸质书",
+      "types": [
+        "传记"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐",
+      "doubanScore": 8.1
+    },
+    {
+      "title": "奥斯曼-土耳其的发现 历史与叙述",
+      "author": "昝涛",
+      "publisher": "北京大学出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "历史"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐",
+      "doubanScore": 8
+    },
+    {
+      "title": "推拿",
+      "author": "毕飞宇",
+      "publisher": "人民文学出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文"
+    },
+    {
+      "title": "童年",
+      "author": "高尔基",
+      "publisher": "中国文联出版社",
+      "country": "🇷🇺",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文"
+    },
+    {
+      "title": "历史中的大与小",
+      "author": "马伯庸",
+      "publisher": "湖南文艺出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "历史"
+      ],
+      "language": "中文"
+    },
+    {
+      "title": "刀锋 The Razor’s Edge",
+      "author": "毛姆 William Someret Maugham",
+      "publisher": "果麦文化",
+      "country": "🇺🇸",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐",
+      "doubanScore": 9.2
+    },
+    {
+      "title": "Outcomes Over Output",
+      "author": "Joshua Seiden",
+      "publisher": "Sense & Respond Press",
+      "country": "🇺🇸",
+      "medium": "PDF",
+      "types": [
+        "产品"
+      ],
+      "language": "英文",
+      "rating": "⭐⭐⭐⭐⭐",
+      "doubanScore": 9.2
+    },
+    {
+      "title": "我在北京送快递",
+      "author": "胡安焉",
+      "publisher": "湖南文艺出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "传记"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐",
+      "doubanScore": 8.1
+    },
+    {
+      "title": "所有顽固的人",
+      "author": "时晨",
+      "publisher": "北京联合出版公司",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "随笔"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐⭐",
+      "doubanScore": 8.3
+    },
+    {
+      "title": "控制",
+      "author": "约翰·兰多夫·桑顿",
+      "publisher": "上海文化出版社",
+      "country": "🇺🇸",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐",
+      "doubanScore": 7
+    },
+    {
+      "title": "智人之上",
+      "author": "尤瓦尔赫拉利",
+      "publisher": "中信出版社",
+      "country": "🇮🇱",
+      "medium": "纸质书",
+      "types": [
+        "科技"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐⭐",
+      "doubanScore": 8
+    },
+    {
+      "title": "妻妾成群",
+      "author": "苏童",
+      "publisher": "上海文艺出版社",
+      "country": "🇨🇳",
+      "medium": "纸质书",
+      "types": [
+        "小说"
+      ],
+      "language": "中文",
+      "rating": "⭐⭐⭐⭐",
+      "doubanScore": 9
+    }
+  ],
+  "history": [
+    {
+      "year": 2025,
+      "count": 29
+    },
+    {
+      "year": 2024,
+      "count": 33
+    },
+    {
+      "year": 2023,
+      "count": 42
+    },
+    {
+      "year": 2022,
+      "count": 27
+    },
+    {
+      "year": 2021,
+      "count": 56
+    },
+    {
+      "year": 2020,
+      "count": 17
+    }
+  ]
+}

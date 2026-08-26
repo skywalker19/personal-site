@@ -10,6 +10,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "new": "node scripts/new-thing.mjs",
+    "new:travel": "node scripts/new-travel.mjs",
+    "sync:reading": "node scripts/sync-reading.mjs",
     "publish": "bash scripts/publish.sh"
   },
   "dependencies": {

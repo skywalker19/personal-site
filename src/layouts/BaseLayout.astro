@@ -4,15 +4,22 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  canonicalPath?: string;
+  socialImage?: string;
 }
 
 const {
   title = "日积小事",
-  description = "Calvin 持续生长的个人档案：项目、实验与写作。",
+  description = "Calvin 持续生长的个人档案：创客、阅读者与旅行者。",
+  canonicalPath = Astro.url.pathname,
+  socialImage,
 } = Astro.props;
 
 const pageTitle = title === "日积小事" ? `${title} · Small Things, Over Time` : `${title} — 日积小事`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonicalURL = new URL(canonicalPath, Astro.site);
+const socialImageURL = socialImage ? new URL(socialImage, Astro.site) : undefined;
+const pathname = Astro.url.pathname;
+const isCurrent = (route: string) => pathname === route || (route !== "/" && pathname.startsWith(route));
 ---
 
 <!doctype html>
@@ -24,6 +31,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <meta name="theme-color" content="#111d27" />
     <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="日积小事" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    {socialImageURL && <meta property="og:image" content={socialImageURL} />}
+    <meta name="twitter:card" content={socialImageURL ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {socialImageURL && <meta name="twitter:image" content={socialImageURL} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <title>{pageTitle}</title>
   </head>
@@ -38,8 +55,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         </span>
       </a>
       <nav aria-label="主导航">
-        <a href="/things/" aria-current={Astro.url.pathname.startsWith("/things") ? "page" : undefined}>小事</a>
-        <a href="/about/" aria-current={Astro.url.pathname === "/about/" ? "page" : undefined}>关于</a>
+        <a href="/things/" aria-current={isCurrent("/things/") ? "page" : undefined}><span>创客</span><small lang="en">Maker</small></a>
+        <a href="/reading/" aria-current={isCurrent("/reading/") ? "page" : undefined}><span>阅读者</span><small lang="en">Reader</small></a>
+        <a href="/travel/" aria-current={isCurrent("/travel/") ? "page" : undefined}><span>旅行者</span><small lang="en">Traveler</small></a>
+        <a href="/about/" aria-current={isCurrent("/about/") ? "page" : undefined}><span>关于</span><small lang="en">About</small></a>
       </nav>
     </header>
     <main id="main">

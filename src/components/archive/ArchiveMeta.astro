@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  values?: string[];
+}
+
+const { label, values = [] } = Astro.props;
+---
+
+{values.length > 0 && (
+  <div class="archive-meta">
+    <span>{label}</span>
+    <ul>{values.map((value) => <li>{value}</li>)}</ul>
+  </div>
+)}
+
+<style>
+  .archive-meta { display: flex; flex-wrap: wrap; gap: 10px 16px; color: var(--ink-soft); font: 10px var(--utility); letter-spacing: .06em; }
+  .archive-meta > span { color: var(--ink); text-transform: uppercase; }
+  ul { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
+</style>

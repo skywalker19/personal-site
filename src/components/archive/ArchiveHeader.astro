@@ -1,0 +1,27 @@
+---
+interface Props {
+  domain: "things" | "reading" | "travel";
+  eyebrow: string;
+  title: string;
+  accent?: string;
+  intro: string;
+}
+
+const { domain, eyebrow, title, accent, intro } = Astro.props;
+---
+
+<header class="archive-heading" data-archive-domain={domain}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h1 class="display-title">{title}{accent && <><br /><em>{accent}</em></>}</h1>
+  <p class="intro-copy">{intro}</p>
+</header>
+
+<style>
+  .archive-heading { padding-block: clamp(72px, 10vw, 142px) 70px; }
+  .archive-heading .intro-copy { margin: 52px 0 0 28%; }
+  [data-archive-domain="reading"] em { color: var(--violet); }
+  [data-archive-domain="travel"] em { color: var(--green); }
+  @media (max-width: 720px) {
+    .archive-heading .intro-copy { margin-left: 0; }
+  }
+</style>
