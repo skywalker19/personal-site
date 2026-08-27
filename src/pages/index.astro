@@ -17,21 +17,21 @@ const latestTravel = travelTimeline[0];
 
 <BaseLayout>
   <section class="hero page-shell">
-    <p class="eyebrow">个人档案 · A personal archive</p>
-    <h1 class="display-title">做过、读过、走过，<br /><em>慢慢积累。</em></h1>
+    <p class="eyebrow">日常的河流 · A personal archive</p>
+    <h1 class="display-title">做过、读过、走过，<br /><em>让时间留下回声。</em></h1>
     <div class="hero-foot">
       <p class="intro-copy">
-        做一些小工具，读一些书，也把走过的地方写下来。这里收集已经完成的、尚未完成的，以及仍在生长的生活片段。
+        把一些小小的念头交给双手，把一些遥远的世界交给书页，也把走过的地方交给时间。这里收集已经完成的、尚未完成的，以及仍在生长的生活片段。
       </p>
-      <p class="intro-zh" lang="en">Small tools, useful detours, and ideas still becoming.</p>
+      <p class="intro-zh" lang="en">Small tools, borrowed worlds, and roads that keep unfolding.</p>
     </div>
   </section>
 
   <section class="archive-portals page-shell" aria-labelledby="archive-portals-title">
     <div class="section-heading">
       <div>
-        <p class="kicker">三个入口 · Three archives</p>
-        <h2 id="archive-portals-title">同一段生活，不同的页签</h2>
+        <p class="kicker">三种回声 · Three archives</p>
+        <h2 id="archive-portals-title">同一段生活，三种回声</h2>
       </div>
     </div>
     <div class="portal-list">
@@ -39,7 +39,7 @@ const latestTravel = travelTimeline[0];
         domain="things"
         role="Maker"
         roleZh="创客"
-        description="把项目、实验、系统、播客与写作做成可以持续使用的小事。"
+        description="把念头交给双手，让它们长成可使用的小事。‘你必须找到你所热爱的。不要将就。’——史蒂夫·乔布斯"
         href="/things/"
         linkLabel="打开创客档案"
         count={`${things.length} 件`}
@@ -48,7 +48,7 @@ const latestTravel = travelTimeline[0];
         domain="reading"
         role="Reader"
         roleZh="阅读者"
-        description={reading.current.length ? `正在阅读：${reading.current.map((item) => item.title).join("、")}。` : `今年已读 ${reading.completedThisYear.length} 本，往年的阅读留成安静的刻度。`}
+        description={reading.current.length ? `让书页替我远行。正在读：${reading.current.map((item) => item.title).join("、")}。` : `让书页替我远行；今年已读 ${reading.completedThisYear.length} 本，往年的阅读留成安静的刻度。`}
         href="/reading/"
         linkLabel="打开阅读者记录"
         count={reading.current.length ? `${reading.current.length} 本在读` : `今年 ${reading.completedThisYear.length} 本`}
@@ -57,7 +57,7 @@ const latestTravel = travelTimeline[0];
         domain="travel"
         role="Traveler"
         roleZh="旅行者"
-        description={latestTravel ? `${latestTravel.year}年${latestTravel.month}月 · ${latestTravel.destination} · ${latestTravel.days}天。` : "去过的地方，会在这里留下一笔。"}
+        description={latestTravel ? `让脚步丈量远方，让月份替旅程留名。最近一程：${latestTravel.year}年${latestTravel.month}月 · ${latestTravel.destination} · ${latestTravel.days}天。` : "让脚步丈量远方，让去过的地方在这里留下一笔。"}
         href="/travel/"
         linkLabel="打开旅行者记录"
         count={latestTravel ? `${travelTimeline.length} 段` : "待出发"}
@@ -68,7 +68,7 @@ const latestTravel = travelTimeline[0];
   <section class="now page-shell" aria-labelledby="now-title">
     <div class="now-label">
       <span class="pulse" aria-hidden="true"></span>
-      <h2 id="now-title">此刻</h2>
+      <h2 id="now-title">此刻，光落在这里</h2>
       <span>{buildMonth}</span>
     </div>
     <div class="now-list">
@@ -84,8 +84,8 @@ const latestTravel = travelTimeline[0];
   <section class="selected page-shell" aria-labelledby="selected-title">
     <div class="section-heading">
       <div>
-        <p class="kicker">从档案里挑选 · Selected</p>
-        <h2 id="selected-title">几件值得打开的小事</h2>
+        <p class="kicker">从时间里挑选 · Selected</p>
+        <h2 id="selected-title">捞起几件仍在发光的小事</h2>
       </div>
       <a href="/things/">查看全部 {things.length} 件 →</a>
     </div>
@@ -103,8 +103,8 @@ const latestTravel = travelTimeline[0];
   </section>
 
   <section class="archive-invite page-shell">
-    <p class="kicker">放到更长的时间里</p>
-    <p>不是每件事都需要令人惊叹，才值得被记住。</p>
+    <p class="kicker">把微小交给时间</p>
+    <p>不是每件事都要惊天动地，才值得被记住。</p>
     <a href="/things/">去档案里走走 <span aria-hidden="true">↗</span></a>
   </section>
 </BaseLayout>

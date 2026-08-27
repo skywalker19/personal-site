@@ -4,8 +4,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="关于" description="关于 Calvin 和日积小事。">
   <section class="about page-shell">
-    <p class="eyebrow">关于这里 · About this place</p>
+    <p class="eyebrow">关于这里 · A small home for passing things</p>
     <h1 class="display-title">给那些可能随时间<br /><em>飘走的小事，</em>一个家。</h1>
+    <p class="about-epigraph">“我们如何度过每一天，当然也就如何度过一生。”——安妮·迪拉德（意译）</p>
     <div class="about-grid">
       <div class="prose">
         <p>我是 Calvin。我做一些小工具，试验 AI 的新用法，制作一档给孩子听的科技播客，也把过程中想记住的部分写下来。</p>
@@ -22,8 +23,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
   .about { padding-block: clamp(80px, 12vw, 160px); }
+  .about-epigraph { max-width: 620px; margin: 46px 0 0 20%; color: var(--ink-soft); font-family: var(--display); font-size: clamp(20px, 2.5vw, 30px); line-height: 1.45; }
   .about-grid { display: grid; grid-template-columns: 1fr .35fr; gap: 90px; margin-top: 90px; padding-left: 20%; }
   aside { padding-top: 8px; }
   aside a { font: 11px var(--utility); text-underline-offset: 5px; }
-  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 40px; padding-left: 0; } }
+  @media (max-width: 760px) { .about-epigraph { margin-left: 0; } .about-grid { grid-template-columns: 1fr; gap: 40px; padding-left: 0; } }
 </style>

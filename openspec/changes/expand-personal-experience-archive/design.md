@@ -36,7 +36,7 @@ A universal detail-route convention was rejected because it would create empty R
 
 ### 2. Use asymmetric source adapters rather than one universal collection
 
-Travel uses a typed local timeline dataset, with an Astro content collection only for optional authored stories. Reading uses a generated, typed data snapshot created from Notion. Things remains unchanged. Shared components accept small public view models rather than forcing every source into one content-entry schema.
+Travel uses a typed local timeline dataset containing the 14 month/destination/region/duration records in the approved travel register, with an Astro content collection only for optional authored stories. The archive groups destinations as domestic or foreign for filtering. Reading uses a generated, typed data snapshot created from Notion. Things remains unchanged. Shared components accept small public view models rather than forcing every source into one content-entry schema.
 
 A Markdown Reading collection was rejected because it would duplicate the existing source of truth. Querying Notion inside Astro’s production build was rejected because it would couple deployment to credentials and network availability. A single polymorphic collection was rejected because Reading aggregates and Travel narratives have fundamentally different publication behavior.
 
@@ -72,7 +72,7 @@ The page is complete in static HTML and needs no filter script. Its visual langu
 
 ### 7. Keep Travel as a factual timeline with optional narratives
 
-The primary Travel archive is a repository-owned factual timeline. Each record has a verified month, destination, and inclusive trip duration, and is rendered as a timeline card. This compact record deliberately avoids inventing exact dates, summaries, coordinates, or narratives that are not present in the source register. Authoring a richer Markdown story remains optional: when one exists, it may add validated date ranges, approximate location context, transport, companion labels, hero/gallery images, highlights, practical notes, and links. Responsive derivatives, intrinsic dimensions, lazy loading, and meaningful alt text apply to optional Travel media. Interactive mapping remains deferred until real content proves its value.
+The primary Travel archive is a repository-owned factual timeline. The approved register contains 14 records, each with a verified month, destination, domestic/foreign region, and inclusive trip duration, and each is rendered as a timeline card. The archive filter uses the domestic/foreign region grouping while cards continue to show the destination. This compact record deliberately avoids inventing exact dates, summaries, coordinates, or narratives that are not present in the source register. Authoring a richer Markdown story remains optional: when one exists, it may add validated date ranges, approximate location context, transport, companion labels, hero/gallery images, highlights, practical notes, and links. Responsive derivatives, intrinsic dimensions, lazy loading, and meaningful alt text apply to optional Travel media. Interactive mapping remains deferred until real content proves its value.
 
 This preserves factual integrity and privacy: the archive can be complete as a timeline without fabricating detail, while richer stories remain locally controlled.
 

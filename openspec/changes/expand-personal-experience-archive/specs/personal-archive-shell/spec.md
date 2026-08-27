@@ -44,6 +44,13 @@ All archive and applicable detail content SHALL be usable in the generated stati
 - **WHEN** a visitor loads any archive or detail page without executing JavaScript
 - **THEN** navigation, archive summaries, public metadata, and available narrative content remain accessible
 
+### Requirement: Editorial archive voice
+Archive and home-page section titles and subtitles SHALL use concise, poetic language appropriate to their domain. Domain-specific epigraphs MAY be included when their attribution is identified and their factual archive content remains clear.
+
+#### Scenario: Visitor discovers an archive
+- **WHEN** a visitor reads a home-page portal or archive heading
+- **THEN** the visitor sees a distinctive poetic title/subtitle, a clear archive identity, and any included quotation attribution
+
 ### Requirement: Existing Things compatibility
 The expansion SHALL preserve the current canonical `/things/` archive and `/things/<id>/` detail URLs and SHALL retain all currently published Things entries.
 

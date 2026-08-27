@@ -11,8 +11,8 @@
 
 ## 2. Travel Content Foundation
 
-- [x] 2.1 Define a typed Travel timeline record with year/month, destination, and positive duration, plus an optional reference to an authored story; verify it rejects missing or invented-required fields.
-- [x] 2.2 Add the five verified timeline records from the approved travel register and verify their month, destination, duration, reverse chronology, and absence of fabricated exact dates or stories in `dist/`.
+- [x] 2.1 Define a typed Travel timeline record with year/month, destination, domestic/foreign region, and positive duration, plus an optional reference to an authored story; verify it rejects missing or invented-required fields.
+- [x] 2.2 Add the 14 verified timeline records from the approved travel register and verify their month, destination, duration, reverse chronology, and absence of fabricated exact dates or stories in `dist/`.
 - [ ] 2.3 Retain an optional authored Travel-story scaffold without changing existing `npm run new` behavior for Things.
 
 ## 3. Shared Personal Archive Shell
@@ -31,7 +31,7 @@
 
 ## 5. Travel Journal
 
-- [x] 5.1 Build `/travel/` as an accessible reverse-chronological timeline of cards showing month, destination, and duration; add destination/year filters and a zero-entry state, and verify every filter/reset combination produces the expected count.
+- [x] 5.1 Build `/travel/` as an accessible reverse-chronological timeline of cards showing month, destination, and duration; add domestic/foreign region and year filters and a zero-entry state, and verify every filter/reset combination produces the expected count.
 - [ ] 5.2 Preserve optional static `/travel/<slug>/` pages for authored stories only; verify timeline records without stories produce no child route or broken link, while a story with media retains private-location protections.
 - [ ] 5.3 Add Travel-specific responsive timeline-card styling and optional-story media behavior, and verify readable cards at target widths plus correct alt/lazy-loading behavior where authored media exists.
 
@@ -40,6 +40,7 @@
 - [x] 6.1 Revise the home-page narrative to introduce Calvin’s Things, Reading, and Travel as one personal archive through Maker (`创客`), Reader (`阅读者`), and Traveler (`旅行者`) entries; apply the approved role artwork to the three entries, retain the existing “Now” and featured Things content, and verify all previously published Thing links and routes remain unchanged.
 - [x] 6.2 Add a Reading portal showing current-reading names and/or the current-year completed count, and verify it links only to `/reading/` and contains no dates, historical titles, notes, or book-detail URLs.
 - [x] 6.3 Add a Travel portal using the latest verified timeline record, then an authored-empty-state fallback; verify it represents month, destination, and duration without fabricating a story link.
+- [x] 6.4 Refresh home and archive section titles/subtitles with concise poetic copy and source-attributed epigraphs for making, reading, and travel, while preserving factual archive content and existing links.
 
 ## 7. Documentation and Release Verification
 
