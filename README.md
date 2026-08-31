@@ -44,7 +44,7 @@ NOTION_READING_TOKEN=secret npm run sync:reading
 git diff -- src/data/reading.snapshot.json
 ```
 
-The sync reads only database properties from database `[redacted]5` / data source `[redacted]`. Every query is server-filtered to `阅读者 = Calvin`; it never retrieves page blocks or writes to Notion. Review the snapshot diff before publishing. It intentionally contains only current reading, this year's completed titles and approved metadata, and older year/count totals—never credentials, page IDs, dates, notes, keywords, other readers, or historical titles.
+The sync reads only database properties from the configured Notion source. Every query is server-filtered to `阅读者 = Calvin`; it never retrieves page blocks or writes to Notion. Review the snapshot diff before publishing. It intentionally contains only current reading, this year's completed titles and approved metadata, and older year/count totals—never credentials, page IDs, dates, notes, keywords, other readers, or historical titles.
 
 If the snapshot year is stale, `npm run build` will stop with a reminder to run this read-only sync.
 
