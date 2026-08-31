@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miller's Amazing Day - Story 001</title>
+  <style>
+    :root {
+      --ink: #19324b;
+      --muted: #687888;
+      --paper: #fffdf8;
+      --canvas: #f5efe4;
+      --coral: #ef705f;
+      --coral-deep: #c74e43;
+      --yellow: #f5c85b;
+      --mint: #b8dec5;
+      --line: #ded4c5;
+      --shadow: 0 18px 42px rgba(43, 48, 58, .09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(245, 200, 91, .23), transparent 20rem),
+        radial-gradient(circle at 95% 38%, rgba(184, 222, 197, .28), transparent 21rem),
+        var(--canvas);
+      font: 17px/1.65 Georgia, serif;
+    }
+    button { font: inherit; }
+    main { max-width: 1120px; margin: 0 auto; padding: 34px 24px 70px; }
+    header { position: relative; margin: 0 0 34px; padding: 18px 0 12px; }
+    header::after { position: absolute; right: 5%; bottom: 0; width: 86px; height: 8px; content: ""; background: var(--yellow); transform: rotate(-3deg); }
+    .eyebrow, .kicker, .score, .memory-label, .words, .practice,
+    .section-note, .button, footer, .card-type { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .eyebrow, .kicker { margin: 0 0 11px; color: var(--coral-deep); font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 730px; margin: 0 0 12px; font: 700 clamp(2.35rem, 6vw, 4.65rem)/.98 Georgia, serif; letter-spacing: -.045em; }
+    .intro { max-width: 710px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+    .memory-strip { display: flex; align-items: center; gap: 14px; max-width: 670px; margin-top: 22px; padding: 12px 14px; background: rgba(255, 253, 248, .74); border: 1px solid var(--line); border-radius: 12px; box-shadow: 4px 5px 0 rgba(25, 50, 75, .04); }
+    .memory-label { min-width: max-content; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .memory-track { flex: 1; height: 10px; overflow: hidden; background: #ece4d8; border-radius: 99px; }
+    .memory-fill { width: 0%; height: 100%; background: var(--coral); border-radius: inherit; transition: width .35s ease; }
+    .memory-count { min-width: 65px; color: var(--ink); font: 800 .85rem ui-sans-serif, system-ui, sans-serif; text-align: right; }
+    .practice { margin: 0 0 34px; padding: 15px 20px; color: var(--ink); background: #fff7df; border-left: 5px solid var(--yellow); border-radius: 3px 10px 10px 3px; font-size: .9rem; }
+    .practice strong { color: var(--coral-deep); }
+    .exam-wrap { margin-bottom: 48px; }
+    .panel { padding: 24px; background: rgba(255, 253, 248, .9); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+    .panel h2 { margin: 0; font: 700 clamp(1.45rem, 3vw, 2rem)/1.08 Georgia, serif; letter-spacing: -.03em; }
+    .section-note { margin: 7px 0 0; color: var(--muted); font-size: .82rem; line-height: 1.45; }
+    .exam-panel { background: var(--ink); color: #fffaf0; border: 0; box-shadow: 10px 12px 0 rgba(239, 112, 95, .28); }
+    .exam-panel .kicker { color: var(--yellow); }
+    .exam-panel h2 { color: #fffaf0; }
+    .exam-panel .section-note { color: #c6d3db; }
+    .exam-topline { display: flex; align-items: end; justify-content: space-between; gap: 16px; }
+    .score { color: #fbe2a0; font-size: .78rem; font-weight: 800; text-align: right; }
+    .score strong { display: block; color: white; font-size: 1.55rem; line-height: 1; }
+    .exam-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 20px 0 16px; }
+    .round-status { color: #c6d3db; font: .75rem ui-sans-serif, system-ui, sans-serif; }
+    .button { border: 0; cursor: pointer; font-weight: 800; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; }
+    .button:focus-visible, .match-card:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { padding: 10px 13px; color: var(--ink); background: var(--yellow); border-radius: 8px; box-shadow: 3px 4px 0 rgba(245, 200, 91, .25); font-size: .78rem; }
+    .button-quiet { padding: 6px 0; color: #c6d3db; background: transparent; font-size: .7rem; text-decoration: underline; text-underline-offset: 3px; }
+    .match-board { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .match-column { display: grid; gap: 8px; }
+    .match-card { min-height: 46px; padding: 9px 11px; color: var(--ink); background: #fffaf0; border: 2px solid transparent; border-radius: 8px; cursor: pointer; font-size: .9rem; line-height: 1.2; text-align: left; transition: transform .18s ease, border-color .18s ease, background .18s ease, opacity .18s ease; }
+    .match-card:hover { transform: translateX(2px); border-color: var(--yellow); }
+    .match-card.selected { border-color: var(--yellow); background: #fff1be; }
+    .match-card.matched { border-color: var(--mint); background: var(--mint); cursor: default; opacity: .7; }
+    .match-card.wrong { border-color: var(--coral); background: #ffd9d0; animation: shake .28s linear; }
+    .card-type { display: block; margin-bottom: 2px; color: #75818b; font-size: .58rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .exam-message { min-height: 24px; margin: 13px 0 0; color: #fbe2a0; font: .75rem/1.4 ui-sans-serif, system-ui, sans-serif; }
+    @keyframes shake { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+    .story-heading { margin: 0 0 16px; }
+    .story-heading h2 { margin: 0; font: 700 clamp(1.8rem, 4vw, 2.7rem)/1 Georgia, serif; letter-spacing: -.035em; }
+    .scene { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 26px; align-items: start; margin: 0 0 28px; padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 8px 28px rgba(123, 90, 50, .06); }
+    .scene:nth-of-type(even) { background: #fffaf1; }
+    .scene h3 { margin: 0 0 10px; font: 700 1.35rem/1.2 ui-sans-serif, system-ui, sans-serif; }
+    .scene p { margin: 0 0 12px; }
+    .scene img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; cursor: zoom-in; }
+    .words { margin: 14px 0 0; color: var(--muted); font-size: .85rem; font-weight: 600; line-height: 1.45; }
+    footer { margin-top: 38px; color: var(--muted); font-size: .78rem; text-align: center; }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      main { padding: 24px 14px 48px; }
+      header { margin-bottom: 28px; }
+      .memory-strip { align-items: start; flex-wrap: wrap; gap: 7px 12px; }
+      .memory-track { order: 3; flex-basis: 100%; }
+      .panel { padding: 18px; border-radius: 14px; }
+      .exam-topline { display: block; }
+      .score { display: inline-block; margin-top: 14px; text-align: left; }
+      .score strong { display: inline; margin-right: 4px; }
+      .scene { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Miller Words / Story 001</p>
+      <h1>A day of words, ready to remember.</h1>
+      <p class="intro">Read each scene once with the labels visible, then cover the labels and retell the scene from memory.</p>
+      <div class="memory-strip" aria-label="Remembered word progress">
+        <span class="memory-label">Memory meter</span>
+        <div class="memory-track" aria-hidden="true"><div class="memory-fill" id="memoryFill"></div></div>
+        <span class="memory-count" id="rememberedCount">0 / 44</span>
+      </div>
+    </header>
+
+    <div class="practice"><strong>Practice rhythm:</strong> Look, read aloud, hide the labels, retell, then use one difficult word in a new sentence.</div>
+
+    <section class="exam-wrap" aria-label="Memory exam">
+      <article class="panel exam-panel" id="memory-exam">
+        <p class="kicker">01 / Memory exam</p>
+        <div class="exam-topline">
+          <div>
+            <h2>Match the word to its meaning</h2>
+            <p class="section-note">Choose one English card and one Chinese card. A correct match adds that word to the memory meter on this device.</p>
+          </div>
+          <div class="score"><strong id="roundScore">0 / 8</strong>this round</div>
+        </div>
+        <div class="exam-actions">
+          <span class="round-status" id="roundStatus">8 pairs are waiting.</span>
+          <button class="button button-primary" id="newRound" type="button">New round</button>
+        </div>
+        <div class="match-board" id="matchBoard" aria-live="polite"></div>
+        <p class="exam-message" id="examMessage" role="status">Start with a word you know, then find its translation.</p>
+        <button class="button button-quiet" id="clearMemory" type="button">Clear remembered words</button>
+      </article>
+    </section>
+
+    <section aria-labelledby="story-title">
+      <div class="story-heading"><p class="kicker">02 / Read and retell</p><h2 id="story-title">Miller's Amazing Day</h2></div>
+      <article class="scene">
+        <div>
+          <h3>Scene 1 - The playground</h3>
+          <p>On the <strong>way</strong> to the playground, Miller wears a silly <strong>dress</strong> and plays <strong>tag</strong> and <strong>hide-and-seek</strong>. His friends <strong>pick up</strong> the <strong>rest</strong> of the <strong>balloons</strong> and <strong>add</strong> them to their toy <strong>trucks</strong>.</p>
+          <p>They run <strong>near</strong> the <strong>slides</strong>, balance on the <strong>boards</strong>, and shoot <strong>hoops</strong>.</p>
+          <p class="words">Words: way, dress, tag, seek, pick up, rest, balloon, add, trucks, near, slides, boards, hoops</p>
+        </div>
+        <a href="../cartoon/case001.jpeg"><img src="../cartoon/case001.jpeg" alt="Cartoon playground scene with vocabulary labels"></a>
+      </article>
+      <article class="scene">
+        <div>
+          <h3>Scene 2 - The clown show</h3>
+          <p><strong>Far</strong> across the room, a <strong>bat</strong> begins to <strong>glide</strong> <strong>near</strong> a fish <strong>tank</strong> under a bright <strong>ray</strong> of light.</p>
+          <p>A <strong>clown</strong> in a funny <strong>costume</strong> begins to <strong>juggle</strong>. He decides to <strong>show</strong> us a silly <strong>act</strong>, and then he takes a <strong>bow</strong>.</p>
+          <p class="words">Words: far, bat, glide, near, tank, ray, clown, costume, juggle, show, act, bow</p>
+        </div>
+        <a href="../cartoon/case002.jpeg"><img src="../cartoon/case002.jpeg" alt="Cartoon clown show scene with vocabulary labels"></a>
+      </article>
+      <article class="scene">
+        <div>
+          <h3>Scene 3 - The beach workshop</h3>
+          <p>At the beach, the children use <strong>science</strong> to <strong>dig</strong> for <strong>shells</strong> and <strong>build</strong> sand <strong>castles</strong>.</p>
+          <p>They <strong>build</strong> a monster from <strong>wood</strong>, <strong>stone</strong>, and <strong>metal</strong>, tie it with <strong>rope</strong>, and place it beside the castles. Their newly <strong>built</strong> monster looks funny but friendly.</p>
+          <p class="words">Words: science, dig, shells, build, castles, wood, stone, metal, rope, built</p>
+        </div>
+        <a href="../cartoon/case003.jpeg"><img src="../cartoon/case003.jpeg" alt="Cartoon beach workshop scene with vocabulary labels"></a>
+      </article>
+      <article class="scene">
+        <div>
+          <h3>Scene 4 - Baking and making</h3>
+          <p>By <strong>myself</strong>, I <strong>mix</strong> <strong>flour</strong> and <strong>butter</strong> near the <strong>oven</strong>, then <strong>roll</strong> out the dough and <strong>fold</strong> it over.</p>
+          <p>Finally, I <strong>tear</strong> a sheet of paper, <strong>fold</strong> it into a box, and use <strong>glue</strong> and <strong>tape</strong> to hold it together.</p>
+          <p class="words">Words: myself, mix, flour, butter, oven, roll, fold, tear, glue, tape</p>
+        </div>
+        <a href="../cartoon/case004.jpeg"><img src="../cartoon/case004.jpeg" alt="Cartoon baking and making scene with vocabulary labels"></a>
+      </article>
+    </section>
+    <footer>Story 001 - Miller Words · Matching progress is saved only in this browser.</footer>
+  </main>
+
+  <script>
+    const wordBank = [
+      ["tag", "抓人游戏；追赶"], ["seek", "寻找"], ["dress", "服装；穿着"], ["rest", "剩下的部分"], ["way", "道路；路线"], ["add", "增加；加入"],
+      ["pick up", "捡起"], ["trucks", "卡车"], ["balloon", "气球"], ["slides", "滑梯"], ["boards", "木板；跳板"], ["hoops", "篮筐"],
+      ["near", "在附近"], ["far", "在远处"], ["tank", "鱼缸"], ["ray", "光线"], ["glide", "滑行；平稳地移动"], ["bat", "蝙蝠"], ["clown", "小丑"], ["costume", "戏服；服装"],
+      ["science", "科学"], ["dig", "挖掘"], ["shells", "贝壳"], ["build", "建造"], ["castles", "城堡"], ["wood", "木头"], ["stone", "石头"], ["metal", "金属"], ["rope", "绳子"], ["built", "建好的；建造了"],
+      ["flour", "面粉"], ["butter", "黄油"], ["mix", "搅拌；混合"], ["oven", "烤箱"], ["myself", "我自己；独自"], ["tear", "撕开"], ["roll", "擀；卷"], ["fold", "折叠"], ["glue", "胶水；粘贴"], ["tape", "胶带；用胶带粘"], ["show", "给……看；展示"], ["act", "表演；节目"], ["juggle", "杂耍；抛接多个物体"], ["bow", "鞠躬"]
+    ].map(([word, meaning], index) => ({ id: `${index}-${word}`, word, meaning }));
+    const STORAGE_KEY = "miller-words-remembered-v1";
+    const state = { remembered: loadRemembered(), round: [], selectedWord: null, selectedMeaning: null, matched: new Set() };
+    const board = document.querySelector("#matchBoard");
+    const examMessage = document.querySelector("#examMessage");
+    function loadRemembered() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        return new Set(Array.isArray(saved) ? saved : []);
+      } catch (error) { return new Set(); }
+    }
+    function saveRemembered() { localStorage.setItem(STORAGE_KEY, JSON.stringify([...state.remembered])); }
+    function shuffle(items) { return [...items].sort(() => Math.random() - .5); }
+    function updateMemoryMeter() {
+      const count = state.remembered.size;
+      document.querySelector("#rememberedCount").textContent = `${count} / ${wordBank.length}`;
+      document.querySelector("#memoryFill").style.width = `${Math.round(count / wordBank.length * 100)}%`;
+    }
+    function chooseRound() {
+      const due = shuffle(wordBank.filter(item => !state.remembered.has(item.id)));
+      const known = shuffle(wordBank.filter(item => state.remembered.has(item.id)));
+      return [...due, ...known].slice(0, 8);
+    }
+    function card(item, type) {
+      const button = document.createElement("button");
+      button.className = "match-card";
+      button.type = "button";
+      button.dataset.id = item.id;
+      button.dataset.type = type;
+      button.innerHTML = `<span class="card-type">${type === "word" ? "English" : "中文"}</span>${type === "word" ? item.word : item.meaning}`;
+      button.addEventListener("click", () => selectCard(button));
+      return button;
+    }
+    function renderRound() {
+      board.innerHTML = "";
+      const words = document.createElement("div");
+      const meanings = document.createElement("div");
+      words.className = meanings.className = "match-column";
+      shuffle(state.round).forEach(item => words.append(card(item, "word")));
+      shuffle(state.round).forEach(item => meanings.append(card(item, "meaning")));
+      board.append(words, meanings);
+      document.querySelector("#roundScore").textContent = `0 / ${state.round.length}`;
+      document.querySelector("#roundStatus").textContent = `${state.round.length} pairs are waiting.`;
+      examMessage.textContent = "Start with a word you know, then find its translation.";
+    }
+    function selectCard(button) {
+      if (button.classList.contains("matched") || button.classList.contains("wrong")) return;
+      const type = button.dataset.type;
+      document.querySelectorAll(`.match-card[data-type="${type}"].selected`).forEach(card => card.classList.remove("selected"));
+      button.classList.add("selected");
+      if (type === "word") state.selectedWord = button; else state.selectedMeaning = button;
+      if (state.selectedWord && state.selectedMeaning) checkPair();
+    }
+    function checkPair() {
+      const wordCard = state.selectedWord;
+      const meaningCard = state.selectedMeaning;
+      const isMatch = wordCard.dataset.id === meaningCard.dataset.id;
+      if (isMatch) {
+        wordCard.classList.add("matched");
+        meaningCard.classList.add("matched");
+        state.matched.add(wordCard.dataset.id);
+        state.remembered.add(wordCard.dataset.id);
+        saveRemembered();
+        updateMemoryMeter();
+        document.querySelector("#roundScore").textContent = `${state.matched.size} / ${state.round.length}`;
+        examMessage.textContent = `${wordCard.textContent.replace("English", "").trim()} — yes, that match is remembered.`;
+        if (state.matched.size === state.round.length) {
+          document.querySelector("#roundStatus").textContent = "Round complete.";
+          examMessage.textContent = "Round complete! Start a new round when you are ready to review more words.";
+        }
+      } else {
+        wordCard.classList.add("wrong");
+        meaningCard.classList.add("wrong");
+        examMessage.textContent = "Not quite. Try again and use the picture or story for a clue.";
+        window.setTimeout(() => {
+          wordCard.classList.remove("wrong", "selected");
+          meaningCard.classList.remove("wrong", "selected");
+        }, 650);
+      }
+      state.selectedWord = null;
+      state.selectedMeaning = null;
+    }
+    function newRound() {
+      state.round = chooseRound();
+      state.selectedWord = null;
+      state.selectedMeaning = null;
+      state.matched = new Set();
+      renderRound();
+    }
+    document.querySelector("#newRound").addEventListener("click", newRound);
+    document.querySelector("#clearMemory").addEventListener("click", () => {
+      state.remembered.clear();
+      saveRemembered();
+      updateMemoryMeter();
+      newRound();
+      examMessage.textContent = "Memory meter cleared. The next round will start fresh.";
+    });
+    updateMemoryMeter();
+    newRound();
+  </script>
+</body>
+</html>

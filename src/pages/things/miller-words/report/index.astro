@@ -1,0 +1,149 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { millerWordsOverallReport as report } from "../../../../data/miller-words-overall-report";
+
+const largestSession = Math.max(...report.sessions.map((session) => session.entryCount));
+const formattedDate = new Intl.DateTimeFormat("en", { year: "numeric", month: "long", day: "numeric" }).format(new Date(`${report.updated}T00:00:00`));
+---
+
+<BaseLayout title={report.titleZh} description={report.description}>
+  <article class="report-page">
+    <header class="report-hero">
+      <div class="page-shell report-hero-inner">
+        <div>
+          <p class="eyebrow">Miller Words / Overall report</p>
+          <h1>{report.titleZh}</h1>
+          <p class="title-en" lang="en">{report.title}</p>
+          <p class="intro">{report.description}</p>
+        </div>
+        <div class="report-mark" aria-hidden="true">词</div>
+      </div>
+    </header>
+
+    <div class="page-shell report-body">
+      <div class="report-intro">
+        <p class="kicker">The whole word bank</p>
+        <h2>Small entries, kept in view.</h2>
+        <p>This is the aggregate record for Miller Words across its recorded vocabulary sessions. Story pages stay focused on reading, recall, and practice.</p>
+      </div>
+
+      <section class="totals" aria-labelledby="totals-title">
+        <h2 id="totals-title" class="sr-only">Overall totals</h2>
+        <article class="total-card total-card-primary">
+          <strong>{report.totalEntries}</strong>
+          <span>handwritten entries</span>
+        </article>
+        <article class="total-card">
+          <strong>{report.uniqueWords}</strong>
+          <span>unique words / phrases</span>
+        </article>
+        <article class="total-card">
+          <strong>{report.sessions.length}</strong>
+          <span>recorded days</span>
+        </article>
+      </section>
+
+      <section class="history" aria-labelledby="history-title">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Session history</p>
+            <h2 id="history-title">Entries, day by day</h2>
+          </div>
+          <p class="history-note">Updated {formattedDate}</p>
+        </div>
+
+        <div class="bar-chart" aria-hidden="true">
+          {report.sessions.map((session) => (
+            <div class="bar-column">
+              <span class="bar-value">{session.entryCount}</span>
+              <div class="bar-track"><div class="bar" style={`height: ${(session.entryCount / largestSession) * 100}%`}></div></div>
+              <span class="bar-label">{session.label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Recorded Miller Words entries by day</caption>
+            <thead>
+              <tr><th scope="col">Session</th><th scope="col">Entries</th></tr>
+            </thead>
+            <tbody>
+              {report.sessions.map((session) => (
+                <tr><th scope="row">{session.label}</th><td>{session.entryCount}</td></tr>
+              ))}
+            </tbody>
+            <tfoot>
+              <tr><th scope="row">Total entries</th><td>{report.totalEntries}</td></tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <aside class="report-note">
+        <p class="kicker">About this record</p>
+        <p>{report.sourceNote}</p>
+        <a href="/things/miller-words/">← Back to Miller Words</a>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .report-hero { color: var(--paper-raised); background: var(--gold); }
+  .report-hero-inner { display: grid; grid-template-columns: 1fr .35fr; min-height: 480px; align-items: end; }
+  .report-hero-inner > div:first-child { padding-block: 82px 74px; }
+  .report-hero .eyebrow { color: inherit; opacity: .72; }
+  .report-hero h1 { max-width: 760px; margin: 0; font-family: var(--display); font-size: clamp(54px, 8vw, 104px); font-weight: 400; line-height: .94; letter-spacing: -.055em; }
+  .title-en { margin: 12px 0 0; font: 25px var(--display); opacity: .8; }
+  .intro { max-width: 600px; margin: 34px 0 0; font-size: 19px; line-height: 1.6; opacity: .9; }
+  .report-mark { display: grid; place-items: center; padding-bottom: 60px; font: clamp(140px, 20vw, 250px)/1 var(--display); opacity: .18; }
+  .report-body { padding-block: 100px 130px; }
+  .report-intro { max-width: 640px; }
+  .report-intro h2 { margin: 0; font-family: var(--display); font-size: clamp(38px, 5vw, 62px); font-weight: 400; line-height: 1; letter-spacing: -.045em; }
+  .report-intro p:last-child { margin: 26px 0 0; color: var(--ink-soft); font-size: 18px; line-height: 1.7; }
+  .totals { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 1px; margin-top: 76px; background: var(--line); border: 1px solid var(--line); }
+  .total-card { min-height: 180px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px 26px; background: var(--paper-raised); }
+  .total-card strong { color: var(--ink); font: 400 clamp(58px, 8vw, 94px)/.9 var(--display); letter-spacing: -.06em; }
+  .total-card span { max-width: 150px; color: var(--ink-soft); font: 11px var(--utility); letter-spacing: .08em; text-transform: uppercase; }
+  .total-card-primary { background: color-mix(in srgb, var(--gold) 12%, var(--paper-raised)); }
+  .history { margin-top: 110px; }
+  .section-heading { align-items: end; margin-bottom: 34px; }
+  .section-heading .kicker { margin-bottom: 12px; }
+  .section-heading h2 { font-size: clamp(38px, 5vw, 58px); }
+  .history-note { margin: 0; color: var(--ink-soft); font: 11px var(--utility); letter-spacing: .05em; }
+  .bar-chart { display: flex; align-items: end; gap: clamp(9px, 2vw, 22px); height: 280px; padding: 0 12px 30px; border-bottom: 1px solid var(--ink); }
+  .bar-column { display: flex; min-width: 0; height: 100%; flex: 1; flex-direction: column; align-items: center; justify-content: end; gap: 10px; }
+  .bar-value { font: 600 12px var(--utility); }
+  .bar-track { display: flex; width: min(66px, 78%); height: 210px; align-items: end; background: color-mix(in srgb, var(--gold) 8%, transparent); }
+  .bar { width: 100%; min-height: 8px; background: var(--gold); }
+  .bar-column:nth-child(2n) .bar { background: var(--rust); }
+  .bar-label { color: var(--ink-soft); font: 10px var(--utility); letter-spacing: .04em; }
+  .table-wrap { margin-top: 44px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  caption { margin-bottom: 12px; color: var(--ink-soft); font: 11px var(--utility); letter-spacing: .06em; text-align: left; text-transform: uppercase; }
+  th, td { padding: 14px 16px; border-bottom: 1px solid var(--line); text-align: left; }
+  thead th { color: var(--ink-soft); font: 10px var(--utility); letter-spacing: .1em; text-transform: uppercase; }
+  tbody th { font-weight: 500; }
+  td { text-align: right; font-variant-numeric: tabular-nums; }
+  tfoot th, tfoot td { padding-top: 18px; border-bottom: 0; font-weight: 700; }
+  .report-note { max-width: 620px; margin-top: 90px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+  .report-note .kicker { margin-bottom: 10px; }
+  .report-note p { margin: 0 0 18px; }
+  .report-note a { color: var(--ink); font: 11px var(--utility); letter-spacing: .06em; text-underline-offset: 5px; text-transform: uppercase; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+  @media (max-width: 720px) {
+    .report-hero-inner { grid-template-columns: 1fr; min-height: 0; }
+    .report-hero-inner > div:first-child { padding-block: 64px 58px; }
+    .report-mark { display: none; }
+    .report-body { padding-block: 70px 90px; }
+    .totals { grid-template-columns: 1fr; margin-top: 54px; }
+    .total-card { min-height: 140px; }
+    .history { margin-top: 78px; }
+    .section-heading { align-items: start; flex-direction: column; gap: 14px; }
+    .bar-chart { gap: 6px; padding-inline: 0; }
+    .bar-track { width: min(40px, 86%); }
+    .bar-label { font-size: 8px; }
+    th, td { padding-inline: 10px; }
+  }
+</style>

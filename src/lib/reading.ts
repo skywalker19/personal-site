@@ -15,7 +15,7 @@ const item = z.object({
 
 const readingSnapshot = z.object({
   schemaVersion: z.literal(1),
-  generatedAt: z.string().datetime(),
+  generatedAt: z.iso.datetime(),
   year: z.number().int(),
   current: z.array(item),
   completedThisYear: z.array(item),

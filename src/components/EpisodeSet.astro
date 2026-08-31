@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  episodes: CollectionEntry<"things">["data"]["episodes"];
+}
+
+const { episodes } = Astro.props;
+---
+
+{episodes.length > 0 && (
+  <section class="episode-set" aria-labelledby="episode-set-title">
+    <div class="episode-set-heading">
+      <p class="kicker">Episodes</p>
+      <h2 id="episode-set-title">Miller Words stories</h2>
+    </div>
+    <div class="episode-list">
+      {episodes.map((episode) => (
+        <article class="episode" aria-labelledby={`episode-${episode.slug}`}>
+          <div>
+            <p class="episode-label">Miller Words episode</p>
+            <h3 id={`episode-${episode.slug}`}>{episode.title}</h3>
+          </div>
+          <nav aria-label={`Resources for ${episode.title}`}>
+            <a href={episode.htmlUrl} target="_blank" rel="noreferrer">
+              View HTML <span aria-hidden="true">↗</span>
+            </a>
+            <a href={episode.pdfUrl} download={`miller-words-${episode.slug}.pdf`}>
+              Download PDF <span aria-hidden="true">↓</span>
+            </a>
+          </nav>
+        </article>
+      ))}
+    </div>
+  </section>
+)}
+
+<style>
+  .episode-set { margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .episode-set-heading { margin-bottom: 24px; }
+  .episode-set-heading .kicker { margin-bottom: 12px; }
+  .episode-set-heading h2 { margin: 0; font-family: var(--display); font-size: clamp(30px, 4vw, 42px); font-weight: 400; letter-spacing: -.035em; }
+  .episode-list { display: grid; gap: 12px; }
+  .episode { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 24px; background: rgba(255, 255, 255, .38); border: 1px solid var(--line); }
+  .episode-label { margin: 0 0 6px; color: var(--ink-soft); font-family: var(--utility); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+  .episode h3 { margin: 0; font-family: var(--display); font-size: clamp(22px, 3vw, 30px); font-weight: 400; line-height: 1.15; }
+  .episode nav { display: flex; flex-wrap: wrap; gap: 18px; flex: 0 0 auto; font-family: var(--utility); font-size: 10px; letter-spacing: .04em; }
+  .episode nav a { text-underline-offset: 4px; }
+  @media (max-width: 600px) {
+    .episode { align-items: stretch; flex-direction: column; gap: 18px; padding: 20px; }
+    .episode nav { gap: 12px 18px; }
+  }
+</style>
