@@ -13,7 +13,7 @@
 
 - [x] 3.1 Add the repository-local sensitive-data validator with high-confidence credential, UUID, and email detection plus environment-supplied protected usernames; verify findings report category and location without exposing full values.
 - [x] 3.2 Add passing and failing fixtures for placeholders, real protected values, binary/asset metadata, and generated output; verify the validator returns success only for safe content and a nonzero status for each finding.
-- [ ] 3.3 Add a history-scan mode for reachable Git refs and document safe handling of any detected credential; verify the cleaned repository history reports no protected-value finding.
+- [x] 3.3 Add a history-scan mode for reachable Git refs and document safe handling of any detected credential; verify the cleaned repository history reports no protected-value finding.
 - [x] 3.4 Expose one package command for local validation and document its use before commit and publication; verify a clean checkout can run the command without private values committed locally.
 
 ## 4. Integrate publication gates
@@ -24,6 +24,6 @@
 
 ## 5. Clean public history and verify behavior
 
-- [ ] 5.1 Rewrite public Git file-content history for all identified findings, remove temporary backup refs, and update the remote with a lease; verify public refs contain no historical protected-value finding.
-- [ ] 5.2 Run `npm run check` and `npm run build`, then verify existing Things, Reading, and Travel routes and static output remain available apart from intended redactions.
-- [ ] 5.3 Review the final diff and scan report for accidental value exposure; verify the working tree is clean and the documented rollback/re-clone guidance matches the resulting history.
+- [x] 5.1 Rewrite public Git file-content history for all identified findings, remove temporary backup refs, and update the remote with a lease; verify public refs contain no historical protected-value finding.
+- [x] 5.2 Run `npm run check` and `npm run build`, then verify existing Things, Reading, and Travel routes and static output remain available apart from intended redactions.
+- [x] 5.3 Review the final diff and scan report for accidental value exposure; verify the working tree is clean and the documented rollback/re-clone guidance matches the resulting history.
