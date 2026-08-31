@@ -123,7 +123,7 @@ window.PODCAST_STORY = {
       description: "订阅数突破 5,000。半年多以前，这条路从一枚贴纸和十位订阅者起步。",
       image: "assets/screenshots/2026-08-03-0931-5000-subscribers-card.png",
       imageAlt: "小耳朵听世界订阅数突破5000纪念卡",
-      sourceFile: "[UUID_REDACTED].PNG",
+      sourceFile: "source-image.png",
       kind: "threshold-card",
       hideNullMetrics: true
     },

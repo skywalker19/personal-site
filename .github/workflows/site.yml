@@ -22,10 +22,18 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check sensitive data in repository
+        run: npm run check:sensitive
+        env:
+          PROTECTED_USERNAMES: ${{ secrets.PROTECTED_USERNAMES }}
       - name: Validate and build
         run: npm run build
         env:
           SITE_URL: ${{ vars.SITE_URL }}
+      - name: Check sensitive data in generated site
+        run: npm run check:sensitive -- --path dist
+        env:
+          PROTECTED_USERNAMES: ${{ secrets.PROTECTED_USERNAMES }}
       - name: Store static build
         uses: actions/upload-artifact@v4
         with:

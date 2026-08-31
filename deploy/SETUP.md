@@ -37,13 +37,13 @@ In the repository, create a `production` environment with:
 
 | Name | Kind | Value |
 | --- | --- | --- |
-| `DEPLOY_HOST` | Secret | `150.109.196.200` |
+| `DEPLOY_HOST` | Secret | `<DEPLOY_HOST>` |
 | `DEPLOY_USER` | Secret | dedicated deployment username |
 | `DEPLOY_PATH` | Secret | `/var/www/personal-site` |
 | `DEPLOY_SSH_KEY` | Secret | private half of the restricted deployment key |
 | `DEPLOY_KNOWN_HOSTS` | Secret | verified SSH host-key entry for the server |
 
-Also create the repository-level variable `SITE_URL` with `http://150.109.196.200` while staging. It is used during the build job before the production environment is opened.
+Also create the repository-level variable `SITE_URL` with `https://example.com` while staging. It is used during the build job before the production environment is opened.
 
 Restrict the environment to the `main` branch. Optional manual approval is useful for the first few deployments.
 

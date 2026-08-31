@@ -1,7 +1,6 @@
 import { mkdirSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { execFileSync } from "node:child_process";
-const READING_DATA_SOURCE_ID = "[UUID_REDACTED]";
 const NOTION_BASE = "https://api.notion.com/v1";
 
 const output = resolve("src/data/reading.snapshot.json");
@@ -33,7 +32,17 @@ function publicItem(properties) {
   return Object.fromEntries(Object.entries(value).filter(([, field]) => field !== undefined && (!(Array.isArray(field)) || field.length)));
 }
 
+function readDataSourceId() {
+  const value = process.env.NOTION_READING_DATA_SOURCE_ID;
+  if (!value) throw new Error("NOTION_READING_DATA_SOURCE_ID is required for sync.");
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value)) {
+    throw new Error("NOTION_READING_DATA_SOURCE_ID must be a valid UUID.");
+  }
+  return value;
+}
+
 async function main() {
+  const dataSourceId = readDataSourceId();
   const token = process.env.NOTION_READING_TOKEN;
   const headers = { Authorization: `Bearer ${token}`, "Notion-Version": "2025-09-03", "Content-Type": "application/json" };
   // In local development, the approved Notion CLI may supply its keychain-backed
@@ -53,13 +62,13 @@ async function main() {
       throw new Error(`NOTION_READING_TOKEN is required for sync, or authenticate the local read-only \`ntn\` CLI (${detail}).`);
     }
   };
-  const schema = await request(`/data_sources/${READING_DATA_SOURCE_ID}`);
+  const schema = await request(`/data_sources/${dataSourceId}`);
   assertSchema(schema);
   const year = new Date().getFullYear();
   const current = [], completedThisYear = [], history = new Map();
   let cursor;
   do {
-    const page = await request(`/data_sources/${READING_DATA_SOURCE_ID}/query`, { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}), filter: { property: "阅读者", select: { equals: "Calvin" } } });
+    const page = await request(`/data_sources/${dataSourceId}/query`, { page_size: 100, ...(cursor ? { start_cursor: cursor } : {}), filter: { property: "阅读者", select: { equals: "Calvin" } } });
     if (!Array.isArray(page.results)) throw new Error("Invalid Reading pagination response.");
     for (const row of page.results) {
       const p = row.properties;
@@ -93,7 +102,7 @@ async function main() {
   const temporary = `${output}.tmp`;
   writeFileSync(temporary, `${JSON.stringify(snapshot, null, 2)}\n`, { encoding: "utf8" });
   renameSync(temporary, output);
-  console.log(`Reading snapshot updated: ${READING_DATA_SOURCE_ID}, ${current.length} current, ${completedThisYear.length} completed.`);
+  console.log(`Reading snapshot updated: ${current.length} current, ${completedThisYear.length} completed.`);
 }
 
 main().catch((error) => { console.error(error.message); process.exitCode = 1; });

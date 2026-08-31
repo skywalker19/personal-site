@@ -15,6 +15,29 @@ The production build is static and written to `dist/`:
 npm run build
 ```
 
+## Sensitive project values
+
+Do not commit credentials, UUIDs, account usernames, or email addresses. Keep
+required operational values in environment variables or the approved external
+secret store; tracked examples must use neutral placeholders only. This policy
+covers source, documentation, snapshots, generated `dist/` output, asset
+filenames and metadata, and file contents in reachable Git history.
+
+Run the repository check before publishing:
+
+```bash
+npm run check:sensitive
+```
+
+The check reports only a category and location, never the full value. If a
+credential is found, revoke or rotate it through its owning provider in
+addition to removing it from the repository and history.
+
+For protected account usernames that cannot be inferred from a format, provide
+them only through the untracked `PROTECTED_USERNAMES` environment variable as
+a comma- or newline-separated list. CI may provide the same list through its
+secret store; never add real usernames to scanner configuration.
+
 ## Add a Thing
 
 Create a hidden draft with:
@@ -40,11 +63,20 @@ Lifecycle labels describe different kinds of motion:
 `/reading/` is built from the checked-in, minimized snapshot at `src/data/reading.snapshot.json`; normal builds never contact Notion and do not need a credential. Before publishing new Reading data, share the source database with a least-privilege integration and run:
 
 ```bash
-NOTION_READING_TOKEN=secret npm run sync:reading
+NOTION_READING_TOKEN="<NOTION_READ_TOKEN>" \
+NOTION_READING_DATA_SOURCE_ID="<NOTION_DATA_SOURCE_UUID>" \
+npm run sync:reading
 git diff -- src/data/reading.snapshot.json
 ```
 
-The sync reads only database properties from the configured Notion source. Every query is server-filtered to `阅读者 = Calvin`; it never retrieves page blocks or writes to Notion. Review the snapshot diff before publishing. It intentionally contains only current reading, this year's completed titles and approved metadata, and older year/count totals—never credentials, page IDs, dates, notes, keywords, other readers, or historical titles.
+The sync reads only database properties from the configured Notion source. Set
+`NOTION_READING_DATA_SOURCE_ID` through your local environment or approved
+secret store; never commit its real value. Every query is server-filtered to
+`阅读者 = Calvin`; it never retrieves page blocks or writes to Notion. Review
+the snapshot diff before publishing. It intentionally contains only current
+reading, this year's completed titles and approved metadata, and older
+year/count totals—never credentials, page IDs, dates, notes, keywords, other
+readers, or historical titles.
 
 If the snapshot year is stale, `npm run build` will stop with a reminder to run this read-only sync.
 

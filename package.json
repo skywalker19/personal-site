@@ -8,6 +8,8 @@
     "start": "astro dev",
     "check": "astro check",
     "build": "astro check && astro build",
+    "check:sensitive": "node scripts/check-sensitive-data.mjs --staged",
+    "test:sensitive": "node --test scripts/check-sensitive-data.test.mjs",
     "preview": "astro preview",
     "new": "node scripts/new-thing.mjs",
     "new:travel": "node scripts/new-travel.mjs",
