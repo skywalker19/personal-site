@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="输液完成时间估算原型" />
+    <title>输液监测｜Web 原型</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <a class="site-return" href="/things/drip-monitor/">← 返回项目记录</a>
+      <header class="header">
+        <p class="eyebrow">输液完成时间估算</p>
+        <h1>输液监测</h1>
+      </header>
+
+      <section id="setup-screen" class="screen">
+        <div class="field">
+          <h2>患者 / 滴速类型</h2>
+          <div id="drop-type-options" class="option-list"></div>
+        </div>
+
+        <div class="field">
+          <h2>输液袋容量</h2>
+          <div id="bag-options" class="volume-grid"></div>
+          <label id="custom-volume-field" class="input-label hidden">
+            自定义液量（mL）
+            <input id="custom-volume" type="number" inputmode="decimal" min="0" step="0.1" placeholder="剩余液量（mL）" />
+          </label>
+        </div>
+
+        <label class="input-label">
+          剩余液量（mL）
+          <input id="remaining-amount" type="number" inputmode="decimal" min="0" step="0.1" value="250" />
+        </label>
+
+        <button id="start-measurement" class="button primary">开始测量</button>
+        <p class="safety">仅供估算。请勿据此调节输液速度；请观察滴液或联系医护人员。</p>
+      </section>
+
+      <section id="measure-screen" class="screen hidden">
+        <div class="measure-copy">
+          <h2>每看到一滴液滴就点击</h2>
+          <p>还剩 <strong id="measurement-remaining">20</strong> 秒</p>
+        </div>
+
+        <button id="tap-button" class="tap-button" aria-label="记录一滴可见液滴">
+          <span id="tap-count">0</span>
+          <span>已记录液滴数</span>
+        </button>
+
+        <p class="muted">已用时 <span id="measurement-elapsed">0</span> / 20 秒</p>
+        <p id="measure-warning" class="warning hidden">记录的液滴太少。建议重新测量，以获得更可靠的估算。</p>
+
+        <button id="restart-measurement" class="button secondary">重新开始测量</button>
+        <p class="safety">仅供估算。请勿据此调节输液速度；请观察滴液或联系医护人员。</p>
+      </section>
+
+      <section id="countdown-screen" class="screen hidden">
+        <div id="alert-box" class="alert hidden" role="alert">
+          <h2>输液可能即将结束</h2>
+          <p>请检查输液袋，或联系医护人员。</p>
+          <button id="acknowledge-alert" class="button danger">我已检查</button>
+        </div>
+
+        <div class="countdown-panel">
+          <p>预计剩余时间</p>
+          <strong id="countdown">0:00</strong>
+          <p>预计 <span id="finish-time">--:--</span> 左右结束</p>
+        </div>
+
+        <p id="countdown-warning" class="warning hidden"></p>
+
+        <div class="stats">
+          <div>
+            <strong id="drops-per-minute">0.0</strong>
+            <span>滴 / 分钟</span>
+          </div>
+          <div>
+            <strong id="ml-per-minute">0.00</strong>
+            <span>mL / 分钟</span>
+          </div>
+          <div>
+            <strong id="remaining-now">250</strong>
+            <span>当前 mL</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="redo-measurement" class="button primary">重新测量</button>
+          <button id="adjust-remaining" class="button secondary">调整剩余液量</button>
+          <button id="end-session" class="button tertiary">结束本次记录</button>
+        </div>
+
+        <p class="safety">仅供估算。请勿据此调节输液速度；请观察滴液或联系医护人员。</p>
+      </section>
+    </main>
+
+    <script src="./shared/drip-monitor.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
