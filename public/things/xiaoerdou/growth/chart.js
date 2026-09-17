@@ -25,7 +25,7 @@
   const minTime = data[0].time;
   const maxTime = data[data.length - 1].time;
   const formatNumber = new Intl.NumberFormat("zh-CN");
-  const formatDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
+  const formatDate = new Intl.DateTimeFormat("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" });
 
   const make = (name, attrs = {}, text = "") => {
     const node = document.createElementNS(NS, name);
@@ -55,7 +55,7 @@
   const subscribers = panelScale("subscribers", subscribersTop);
 
   const title = make("title", { id: "growth-chart-title" }, "累计播放与订阅者增长折线图");
-  const description = make("desc", { id: "growth-chart-description" }, `使用${data.length}个同时显示累计播放和订阅者的截图观测点。上方面板是累计播放，下方面板是订阅者，两者共用同一时间轴。`);
+  const description = make("desc", { id: "growth-chart-description" }, `使用${data.length}个每日增量观测点累加得到。上方面板是累计播放，下方面板是累计订阅者，两者共用同一时间轴。`);
   svg.append(title, description);
 
   const defs = make("defs");
@@ -83,8 +83,8 @@
     group.append(make("path", { d: areaPath, fill: `url(#${gradientId})`, class: "chart-area" }));
     group.append(make("path", { d: linePath, fill: "none", stroke: color, class: "chart-line" }));
 
-    const highlighted = new Set(["IMG_0507.PNG", "IMG_1059.PNG", "IMG_2894.PNG", "IMG_3014.PNG", "IMG_7282.PNG"]);
-    data.filter((point) => highlighted.has(point.source)).forEach((point) => {
+    const highlighted = new Set(["2025-11-12", "2025-11-21", "2025-12-23", "2026-03-31", "2026-04-08", "2026-04-10", "2026-08-23", "2026-09-16"]);
+    data.filter((point) => highlighted.has(point.timestamp.slice(0, 10))).forEach((point) => {
       group.append(make("circle", { cx: x(point.time), cy: scale.y(point[key]), r: 5, fill: color, class: "chart-milestone-dot" }));
     });
     return group;
@@ -101,7 +101,8 @@
     [new Date("2026-03-01T00:00:00+08:00").getTime(), "03"],
     [new Date("2026-05-01T00:00:00+08:00").getTime(), "05"],
     [new Date("2026-07-01T00:00:00+08:00").getTime(), "07"],
-    [data[data.length - 1].time, "08.23"]
+    [new Date("2026-09-01T00:00:00+08:00").getTime(), "09"],
+    [data[data.length - 1].time, "09.16"]
   ];
   const axisY = subscribersTop + panelHeight + 34;
   tickDates.forEach(([time, label], index) => {
@@ -116,8 +117,8 @@
   });
 
   const noteY = H - 25;
-  svg.append(make("text", { x: left, y: noteY, class: "chart-footnote" }, `共 ${data.length} 个可核对观测点 · 时间轴按实际间隔绘制`));
-  countNode.textContent = `${data.length} 个截图观测点`;
+  svg.append(make("text", { x: left, y: noteY, class: "chart-footnote" }, `共 ${data.length} 个每日观测点 · 时间轴按实际间隔绘制`));
+  countNode.textContent = `${data.length} 个每日观测点`;
 
   data.forEach((point) => {
     const row = document.createElement("tr");

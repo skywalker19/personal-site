@@ -1,8 +1,8 @@
 window.PODCAST_STORY = {
   siteName: "小耳朵·听世界",
-  eyebrow: "2025.11.12 — 2026.08.23 · 从一枚主播贴纸开始",
+  eyebrow: "2025.11.11 — 2026.09.16 · 每日增量，累加成一条线",
   titleHtml: "一路听见<br>成长",
-  intro: "从“我是主播”的第一枚贴纸，到 5,349 位订阅者和 61,960 次累计播放。这里只保留真正改变刻度的时刻。",
+  intro: "从每日记录里的 0 开始，到 6,065 位订阅者和 70,555 次累计播放。这里把每一天的新增，累加成一条可以回看的线。",
   sectionTitleHtml: "不展示每一步，<br>只记住跨过的线",
   sectionIntro: "十人、一百人、五百人，再到每一个新的千人关口。这些截图不是日报，而是声音向外走时，留下的里程碑。",
   closingTitleHtml: "谢谢每一双<br>愿意听世界的耳朵",
@@ -137,6 +137,18 @@ window.PODCAST_STORY = {
       imageAlt: "2026年8月23日截图，显示61960次播放和5349位订阅者",
       sourceFile: "IMG_7282.PNG",
       kind: "dashboard"
+    },
+    {
+      date: "2026年 · 最新里程碑",
+      title: "六千位订阅者",
+      subscribers: 6000,
+      listens: null,
+      description: "一张为 6,000 位订阅者保存的纪念卡。故事还在继续，下一条里程线仍在声音前方。",
+      image: "assets/screenshots/xiaoerduo-sub-6000.png",
+      imageAlt: "小耳朵·听世界订阅数突破6000的纪念卡",
+      sourceFile: "xiaoerduo-sub-6000.PNG",
+      kind: "threshold-card",
+      hideNullMetrics: true
     }
   ]
 };
