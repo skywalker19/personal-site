@@ -13,7 +13,7 @@ const episode = z.object({
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   title: z.string().min(1),
   htmlUrl: siteRelativeUrl,
-  pdfUrl: siteRelativeUrl,
+  pdfUrl: siteRelativeUrl.optional(),
 });
 
 const report = z.object({

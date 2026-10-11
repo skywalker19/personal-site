@@ -25,9 +25,9 @@ const { episodes } = Astro.props;
             <a href={episode.htmlUrl} target="_blank" rel="noreferrer">
               View HTML <span aria-hidden="true">↗</span>
             </a>
-            <a href={episode.pdfUrl} download={`miller-words-${episode.slug}.pdf`}>
+            {episode.pdfUrl && (<a href={episode.pdfUrl} download={`miller-words-${episode.slug}.pdf`}>
               Download PDF <span aria-hidden="true">↓</span>
-            </a>
+            </a>)}
           </nav>
         </article>
       ))}

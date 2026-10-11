@@ -1,0 +1,1732 @@
+{
+  "title": "Miller Words · Word notebook",
+  "titleZh": "Miller 的单词本",
+  "description": "按 Day 和周次查看词汇积累，打开五篇故事与配图练习。",
+  "updated": "2026-10-11",
+  "totalEntries": 140,
+  "uniqueWords": 139,
+  "sessions": [
+    {
+      "id": "day-1",
+      "label": "Day 1",
+      "day": 1,
+      "week": 1,
+      "entryCount": 6,
+      "newWords": 6,
+      "cumulativeEntries": 6
+    },
+    {
+      "id": "day-2",
+      "label": "Day 2",
+      "day": 2,
+      "week": 1,
+      "entryCount": 6,
+      "newWords": 6,
+      "cumulativeEntries": 12
+    },
+    {
+      "id": "day-3",
+      "label": "Day 3",
+      "day": 3,
+      "week": 1,
+      "entryCount": 8,
+      "newWords": 8,
+      "cumulativeEntries": 20
+    },
+    {
+      "id": "day-4",
+      "label": "Day 4",
+      "day": 4,
+      "week": 1,
+      "entryCount": 5,
+      "newWords": 5,
+      "cumulativeEntries": 25
+    },
+    {
+      "id": "day-5",
+      "label": "Day 5",
+      "day": 5,
+      "week": 1,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 29
+    },
+    {
+      "id": "day-6",
+      "label": "Day 6",
+      "day": 6,
+      "week": 1,
+      "entryCount": 5,
+      "newWords": 5,
+      "cumulativeEntries": 34
+    },
+    {
+      "id": "day-7",
+      "label": "Day 7",
+      "day": 7,
+      "week": 1,
+      "entryCount": 9,
+      "newWords": 9,
+      "cumulativeEntries": 43
+    },
+    {
+      "id": "day-8",
+      "label": "Day 8",
+      "day": 8,
+      "week": 1,
+      "entryCount": 2,
+      "newWords": 1,
+      "cumulativeEntries": 45
+    },
+    {
+      "id": "day-9",
+      "label": "Day 9",
+      "day": 9,
+      "week": 2,
+      "entryCount": 7,
+      "newWords": 7,
+      "cumulativeEntries": 52
+    },
+    {
+      "id": "day-10",
+      "label": "Day 10",
+      "day": 10,
+      "week": 2,
+      "entryCount": 8,
+      "newWords": 8,
+      "cumulativeEntries": 60
+    },
+    {
+      "id": "day-11",
+      "label": "Day 11",
+      "day": 11,
+      "week": 2,
+      "entryCount": 13,
+      "newWords": 13,
+      "cumulativeEntries": 73
+    },
+    {
+      "id": "day-12",
+      "label": "Day 12",
+      "day": 12,
+      "week": 2,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 76
+    },
+    {
+      "id": "day-13",
+      "label": "Day 13",
+      "day": 13,
+      "week": 2,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 79
+    },
+    {
+      "id": "day-14",
+      "label": "Day 14",
+      "day": 14,
+      "week": 2,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 82
+    },
+    {
+      "id": "day-15",
+      "label": "Day 15",
+      "day": 15,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 85
+    },
+    {
+      "id": "day-16",
+      "label": "Day 16",
+      "day": 16,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 88
+    },
+    {
+      "id": "day-17",
+      "label": "Day 17",
+      "day": 17,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 91
+    },
+    {
+      "id": "day-18",
+      "label": "Day 18",
+      "day": 18,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 94
+    },
+    {
+      "id": "day-19",
+      "label": "Day 19",
+      "day": 19,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 97
+    },
+    {
+      "id": "day-20",
+      "label": "Day 20",
+      "day": 20,
+      "week": 3,
+      "entryCount": 3,
+      "newWords": 3,
+      "cumulativeEntries": 100
+    },
+    {
+      "id": "day-21",
+      "label": "Day 21",
+      "day": 21,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 104
+    },
+    {
+      "id": "day-22",
+      "label": "Day 22",
+      "day": 22,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 108
+    },
+    {
+      "id": "day-23",
+      "label": "Day 23",
+      "day": 23,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 112
+    },
+    {
+      "id": "day-24",
+      "label": "Day 24",
+      "day": 24,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 116
+    },
+    {
+      "id": "day-25",
+      "label": "Day 25",
+      "day": 25,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 120
+    },
+    {
+      "id": "day-26",
+      "label": "Day 26",
+      "day": 26,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 124
+    },
+    {
+      "id": "day-27",
+      "label": "Day 27",
+      "day": 27,
+      "week": 4,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 128
+    },
+    {
+      "id": "day-28",
+      "label": "Day 28",
+      "day": 28,
+      "week": 5,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 132
+    },
+    {
+      "id": "day-29",
+      "label": "Day 29",
+      "day": 29,
+      "week": 5,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 136
+    },
+    {
+      "id": "day-30",
+      "label": "Day 30",
+      "day": 30,
+      "week": 5,
+      "entryCount": 4,
+      "newWords": 4,
+      "cumulativeEntries": 140
+    }
+  ],
+  "weeks": [
+    {
+      "number": 1,
+      "inferred": true,
+      "startDay": 1,
+      "endDay": 8,
+      "dayCount": 8,
+      "entryCount": 45,
+      "uniqueWords": 44
+    },
+    {
+      "number": 2,
+      "inferred": false,
+      "startDay": 9,
+      "endDay": 14,
+      "dayCount": 6,
+      "entryCount": 37,
+      "uniqueWords": 37
+    },
+    {
+      "number": 3,
+      "inferred": true,
+      "startDay": 15,
+      "endDay": 20,
+      "dayCount": 6,
+      "entryCount": 18,
+      "uniqueWords": 18
+    },
+    {
+      "number": 4,
+      "inferred": true,
+      "startDay": 21,
+      "endDay": 27,
+      "dayCount": 7,
+      "entryCount": 28,
+      "uniqueWords": 28
+    },
+    {
+      "number": 5,
+      "inferred": true,
+      "startDay": 28,
+      "endDay": 30,
+      "dayCount": 3,
+      "entryCount": 12,
+      "uniqueWords": 12
+    }
+  ],
+  "stories": [
+    {
+      "id": "story-001",
+      "title": "Miller's Amazing Day",
+      "titleZh": "Miller 奇妙的一天",
+      "intro": "On the **way** to the playground, Miller wears a silly **dress** and plays **tag** and **hide-and-seek**. His friends **pick up** the **rest** of the **balloons** and **add** them to their toy **trucks**.",
+      "scenes": [
+        {
+          "number": 1,
+          "title": "The playground",
+          "image": "case001.jpeg",
+          "english": "On the **way** to the playground, Miller wears a silly **dress** and plays **tag** and **hide-and-seek**. His friends **pick up** the **rest** of the **balloons** and **add** them to their toy **trucks**.\n\nThey ran **near** the **slides**, balanced on the **boards**, and shot **hoops**.",
+          "translation": "",
+          "labels": "",
+          "days": ""
+        },
+        {
+          "number": 2,
+          "title": "The clown show",
+          "image": "case002.jpeg",
+          "english": "**Far** across the room, a **bat** began to **glide** **near** a fish **tank** under a bright **ray** of light.\n\nA **clown** in a funny **costume** began to **juggle**. He decided to **show** us a silly **act**, and then he took a **bow**.",
+          "translation": "",
+          "labels": "",
+          "days": ""
+        },
+        {
+          "number": 3,
+          "title": "The beach workshop",
+          "image": "case003.jpeg",
+          "english": "At the beach, the children use **science** to **dig** for **shells** and **build** sand **castles**.\n\nThey **build** a monster from **wood**, **stone**, and **metal**, tie it with **rope**, and place it beside the castles. Their newly **built** monster looks funny but friendly.",
+          "translation": "",
+          "labels": "",
+          "days": ""
+        },
+        {
+          "number": 4,
+          "title": "Baking and making",
+          "image": "case004.jpeg",
+          "english": "By **myself**, I **mix** **flour** and **butter** near the **oven**, then **roll** out the dough and **fold** it over.\n\nFinally, I **tear** a sheet of paper, **fold** it into a box, and use **glue** and **tape** to hold it together.",
+          "translation": "",
+          "labels": "",
+          "days": ""
+        }
+      ],
+      "week": 1,
+      "startDay": 1,
+      "endDay": 8,
+      "entryCount": 45,
+      "sceneCount": 4,
+      "cover": "case001.jpeg",
+      "coverAlt": "The playground",
+      "hasPdf": true
+    },
+    {
+      "id": "story-002",
+      "title": "Miller's Busy Saturday",
+      "titleZh": "Miller 忙碌的星期六",
+      "intro": "Miller gave Grandma a **hug** before helping her **bake** a pie.",
+      "scenes": [
+        {
+          "number": 1,
+          "title": "A kitchen hug",
+          "image": "story-002-scene-01.png",
+          "english": "Miller gave Grandma a **hug** before helping her **bake** a pie.\n\nThey put **broccoli** and **cabbage** in the pie.\n\nThere was a **chile pepper** beside the **corn** and **lettuce** on the table.",
+          "translation": "Miller 抱了抱奶奶，然后帮她烤馅饼。馅饼里放了西兰花和甘蓝菜，桌上还有辣椒、玉米和生菜。",
+          "labels": "hug, bake, broccoli, cabbage, chile pepper, corn, lettuce.",
+          "days": "Day 9"
+        },
+        {
+          "number": 2,
+          "title": "Coins and a nature poster",
+          "image": "story-002-scene-02.png",
+          "english": "In Grandma's coin box, Miller found a **penny**, a **nickel**, and a **dime**.\n\nOn a nature poster, a fish had shiny **scales**, a bird had a soft **feather**, and a porcupine had sharp **spines**.\n\nA turtle's shell looked like **armor**, covering the soft **skin** underneath.",
+          "translation": "Miller 在奶奶的硬币盒里找到了三种硬币。动物海报上的鱼鳞闪闪发亮，鸟有柔软的羽毛，豪猪有尖刺。乌龟的壳像盔甲，保护着下面柔软的皮肤。",
+          "labels": "penny, nickel, dime, scales, feather, spines, armor, skin.",
+          "days": "Day 10"
+        },
+        {
+          "number": 3,
+          "title": "A pretend parade",
+          "image": "story-002-scene-03.png",
+          "english": "Miller **joined** a pretend **army**, and the **soldiers** **marched** in a **parade**.\n\nThe **corporal** and **sergeant** wore **stripes** on their sleeves and **kept** in **step**.\n\n**Nobody** **wanted** to stop, but it was time for a snack **instead**.",
+          "translation": "Miller 加入了扮演军队的游戏，大家扮成士兵参加游行。下士和军士的袖子上有条纹，他们步伐一致。虽然没人想停下来，但大家该改为吃点心了。",
+          "labels": "joined, army, soldiers, marched, parade, corporal, sergeant, stripes, kept, step, Nobody, wanted, instead.",
+          "days": "Day 11"
+        },
+        {
+          "number": 4,
+          "title": "A boat on the lid",
+          "image": "story-002-scene-04.png",
+          "english": "Back home, Miller **fed** the ducks and **dried** his hands.\n\nThen he **ran** to the toy **bin**.\n\nA little boat sat on **top** of the bin's **lid**.",
+          "translation": "回到家，Miller 喂了鸭子并擦干双手。他跑到玩具箱旁，发现一只小船放在箱子盖的上面。",
+          "labels": "fed, dried, ran, bin, top, lid.",
+          "days": "Day 12、Day 13"
+        },
+        {
+          "number": 5,
+          "title": "The little raft",
+          "image": "story-002-scene-05.png",
+          "english": "Miller took his toy **raft** to a little stream.\n\nHe **slid** it into the water, but a twig on the raft **broke**.\n\nGrandma helped him fix it, and the raft floated again.",
+          "translation": "Miller 带着玩具木筏来到小溪边，把它轻轻滑入水中。木筏上的小树枝断了，奶奶帮忙修好后，它又漂了起来。",
+          "labels": "raft, slid, broke.",
+          "days": "Day 14"
+        }
+      ],
+      "week": 2,
+      "startDay": 9,
+      "endDay": 14,
+      "entryCount": 37,
+      "sceneCount": 5,
+      "cover": "story-002-scene-01.png",
+      "coverAlt": "A kitchen hug",
+      "hasPdf": false
+    },
+    {
+      "id": "story-003",
+      "title": "A Little House for a Hamster",
+      "titleZh": "给仓鼠的小房子",
+      "intro": "Miller had a **dream** about a **brave** **hamster** in a tiny house.",
+      "scenes": [
+        {
+          "number": 1,
+          "title": "A dream house",
+          "image": "story-003-scene-01.png",
+          "english": "Miller had a **dream** about a **brave** **hamster** in a tiny house.\n\nIn the morning, Dad used a **saw** to build that house.\n\nMiller carried the pieces in a **basket**.",
+          "translation": "Miller 梦见一只勇敢的仓鼠住在小房子里。早上，爸爸用锯子做这间房子，Miller 用篮子搬木块。",
+          "labels": "dream, brave, hamster, saw, basket.",
+          "days": "Day 15、Day 20"
+        },
+        {
+          "number": 2,
+          "title": "A stuck basketball",
+          "image": "story-003-scene-02.png",
+          "english": "During a break, Miller tried to **shoot** a basketball into the hoop.\n\nThe ball got **stuck** under the garden workbench.\n\nHe **rang** Grandma to tell her about it.",
+          "translation": "休息时，Miller 想投篮，但球卡在花园的工作台下面。他给奶奶打了电话，告诉她这件事。",
+          "labels": "shoot, stuck, rang.",
+          "days": "Day 16"
+        },
+        {
+          "number": 3,
+          "title": "An odd little problem",
+          "image": "story-003-scene-03.png",
+          "english": "Miller **took** a long **rod** and a **net** to fetch the ball.\n\nA long **weed** was tangled in the net, and Miller felt **upset**.\n\n“That is **odd**!” he said.",
+          "translation": "Miller 拿来一根长竿和一个网，想取出篮球。网里缠着一株长长的杂草，让他有点心烦。他说：“真奇怪！”",
+          "labels": "took, rod, net, weed, upset, odd.",
+          "days": "Day 17、Day 18"
+        },
+        {
+          "number": 4,
+          "title": "Home at last",
+          "image": "story-003-scene-04.png",
+          "english": "Just then, the hamster **began** to run toward a hole in the fence.\n\nMiller shook the weed loose and **saved** the hamster with the net.\n\nThey put its **real** little house inside the **cage**.",
+          "translation": "这时，仓鼠开始向栅栏上的洞跑去。Miller 抖掉网里的杂草，用网把仓鼠救了回来。最后，他们把真正做好的小房子放进笼子里。",
+          "labels": "began, saved, real, cage.",
+          "days": "Day 19、Day 20"
+        }
+      ],
+      "week": 3,
+      "startDay": 15,
+      "endDay": 20,
+      "entryCount": 18,
+      "sceneCount": 4,
+      "cover": "story-003-scene-01.png",
+      "coverAlt": "A dream house",
+      "hasPdf": false
+    },
+    {
+      "id": "story-004",
+      "title": "The Market and the Seaside Circus",
+      "titleZh": "集市和海边马戏团",
+      "intro": "A week **ago**, Miller **stood** on the **curb** beside his toy **wagon**.",
+      "scenes": [
+        {
+          "number": 1,
+          "title": "An onion on the run",
+          "image": "story-004-scene-01.png",
+          "english": "A week **ago**, Miller **stood** on the **curb** beside his toy **wagon**.\n\nIt was full of **onions** for the market.\n\nA loose onion rolled away, so Miller had to **chase** it.",
+          "translation": "一周以前，Miller 站在马路牙子上，旁边是装着洋葱的玩具四轮车。一只洋葱滚走了，他赶紧追了过去。",
+          "labels": "ago, stood, curb, wagon, onions, chase.",
+          "days": "Day 21、Day 22"
+        },
+        {
+          "number": 2,
+          "title": "Seeds and a snack",
+          "image": "story-004-scene-02.png",
+          "english": "At the market, a farmer **sold** Miller some cheese shaped like a **cube**.\n\nShe gave him a **shovel** and **another** packet of seeds.\n\n“Let us **grow** some onions,” she said.",
+          "translation": "在集市上，一位农场主卖给 Miller 一块立方体形状的奶酪，又给了他一把铲子和另一包种子。她说：“我们种些洋葱吧。”",
+          "labels": "sold, cube, shovel, another, grow.",
+          "days": "Day 22、Day 23"
+        },
+        {
+          "number": 3,
+          "title": "A circus by the ocean",
+          "image": "story-004-scene-03.png",
+          "english": "They went to a **circus** on a piece of **land** beside the **ocean**.\n\nA **paddler** splashed through the shallow water.\n\nMiller made a **mistake** and left his ticket in the wagon.",
+          "translation": "他们来到海边一块土地上的马戏团。一位涉水者在浅水中踩出了水花。Miller 发现自己犯了个错误：把票留在四轮车里了。",
+          "labels": "circus, land, ocean, paddler, mistake.",
+          "days": "Day 21、Day 24"
+        },
+        {
+          "number": 4,
+          "title": "Waiting with Dad",
+          "image": "story-004-scene-04.png",
+          "english": "An **ordered** row of chairs stood **along** the path.\n\n“Do not wait here **alone**,” Grandma said.\n\n“I **care** about you, so stay with Dad.”",
+          "translation": "小路旁的椅子排得整整齐齐。奶奶去取票前说：“不要独自在这里等。我关心你，所以和爸爸待在一起。”",
+          "labels": "ordered, along, alone, care.",
+          "days": "Day 25"
+        },
+        {
+          "number": 5,
+          "title": "A heavy trunk",
+          "image": "story-004-scene-05.png",
+          "english": "Miller saw a new **type** of **van** with a **heavy** **trunk** in the back.\n\n“Let us **weigh** it **once** more,” Dad said, while Miller read the **scale** on the dial.\n\nThey hoped to **reach** home before dinner.",
+          "translation": "Miller 看见一种新的客货车，车后放着一个沉重的行李箱。爸爸说：“我们再称一次吧。”Miller 看着秤的表盘上的刻度。他们希望晚饭前到家。",
+          "labels": "type, van, heavy, trunk, weigh, once, scale, reach.",
+          "days": "Day 26、Day 27"
+        }
+      ],
+      "week": 4,
+      "startDay": 21,
+      "endDay": 27,
+      "entryCount": 28,
+      "sceneCount": 5,
+      "cover": "story-004-scene-01.png",
+      "coverAlt": "An onion on the run",
+      "hasPdf": false
+    },
+    {
+      "id": "story-005",
+      "title": "A Kind Day at the Farm",
+      "titleZh": "农场里友善的一天",
+      "intro": "“You are an **honest** **person**,” the farmer said when Miller returned a lost coin.",
+      "scenes": [
+        {
+          "number": 1,
+          "title": "An honest person",
+          "image": "story-005-scene-01.png",
+          "english": "“You are an **honest** **person**,” the farmer said when Miller returned a lost coin.\n\nThen Miller bought some **peanuts** with his own money.",
+          "translation": "Miller 把捡到的硬币还给农场主，农场主夸他是个诚实的人。然后，Miller 用自己的钱买了些花生。",
+          "labels": "honest, person, peanuts.",
+          "days": "Day 28"
+        },
+        {
+          "number": 2,
+          "title": "A living being",
+          "image": "story-005-scene-02.png",
+          "english": "Beside the shop, Miller watched a **goldfish** swim.\n\nA sign said, “Every living **being** needs food and water.”\n\n“What **else** does it need?” he asked.",
+          "translation": "小店旁，Miller 看着金鱼游动。牌子上写着：“每一个有生命的个体都需要食物和水。”他问：“它还需要什么呢？”",
+          "labels": "goldfish, being, else.",
+          "days": "Day 28、Day 29"
+        },
+        {
+          "number": 3,
+          "title": "Giddyup!",
+          "image": "story-005-scene-03.png",
+          "english": "There was a pile of **hay** beside a wooden horse.\n\n“Let us **pretend** it can run,” Miller said.\n\n“**Giddyup**!” he called from the saddle.",
+          "translation": "木马旁有一堆干草。Miller 说：“我们假装它能跑吧。”他坐在马鞍上喊：“驾！”",
+          "labels": "hay, pretend, Giddyup.",
+          "days": "Day 29、Day 30"
+        },
+        {
+          "number": 4,
+          "title": "One last game",
+          "image": "story-005-scene-04.png",
+          "english": "Behind a low **fence**, Miller found a **swing** and a **seesaw**.\n\nHe tried them both before going home.",
+          "translation": "矮栅栏后面有一个秋千和一个跷跷板。Miller 都玩了一会儿，然后回家了。",
+          "labels": "fence, swing, seesaw.",
+          "days": "Day 30"
+        }
+      ],
+      "week": 5,
+      "startDay": 28,
+      "endDay": 30,
+      "entryCount": 12,
+      "sceneCount": 4,
+      "cover": "story-005-scene-01.png",
+      "coverAlt": "An honest person",
+      "hasPdf": false
+    }
+  ],
+  "words": [
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 1,
+      "word": "tag",
+      "meaning": "抓人游戏；追赶",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 2,
+      "word": "seek",
+      "meaning": "寻找",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 3,
+      "word": "dress",
+      "meaning": "服装；穿着",
+      "pending": true
+    },
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 4,
+      "word": "rest",
+      "meaning": "剩下的部分",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 5,
+      "word": "way",
+      "meaning": "道路；路线",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 1,
+      "ordinal": 6,
+      "word": "add",
+      "meaning": "增加；加入",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 1,
+      "word": "pick up",
+      "meaning": "捡起",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 2,
+      "word": "trucks",
+      "meaning": "卡车",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 3,
+      "word": "balloon",
+      "meaning": "气球",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 4,
+      "word": "slides",
+      "meaning": "滑梯",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 5,
+      "word": "boards",
+      "meaning": "木板；跳板",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 2,
+      "ordinal": 6,
+      "word": "hoops",
+      "meaning": "篮筐",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 1,
+      "word": "near",
+      "meaning": "在附近",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 2,
+      "word": "far",
+      "meaning": "在远处",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 3,
+      "word": "tank",
+      "meaning": "鱼缸",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 4,
+      "word": "ray",
+      "meaning": "光线",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 5,
+      "word": "glide",
+      "meaning": "滑行；平稳地移动",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 6,
+      "word": "bat",
+      "meaning": "蝙蝠",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 7,
+      "word": "clown",
+      "meaning": "小丑",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 3,
+      "ordinal": 8,
+      "word": "costume",
+      "meaning": "戏服；服装",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 4,
+      "ordinal": 1,
+      "word": "science",
+      "meaning": "科学",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 4,
+      "ordinal": 2,
+      "word": "dig",
+      "meaning": "挖掘",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 4,
+      "ordinal": 3,
+      "word": "shells",
+      "meaning": "贝壳",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 4,
+      "ordinal": 4,
+      "word": "build",
+      "meaning": "建造",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 4,
+      "ordinal": 5,
+      "word": "castles",
+      "meaning": "城堡",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 5,
+      "ordinal": 1,
+      "word": "wood",
+      "meaning": "木头",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 5,
+      "ordinal": 2,
+      "word": "stone",
+      "meaning": "石头",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 5,
+      "ordinal": 3,
+      "word": "metal",
+      "meaning": "金属",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 5,
+      "ordinal": 4,
+      "word": "rope",
+      "meaning": "绳子",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 6,
+      "ordinal": 1,
+      "word": "flour",
+      "meaning": "面粉",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 6,
+      "ordinal": 2,
+      "word": "butter",
+      "meaning": "黄油",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 6,
+      "ordinal": 3,
+      "word": "mix",
+      "meaning": "搅拌；混合",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 6,
+      "ordinal": 4,
+      "word": "oven",
+      "meaning": "烤箱",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 6,
+      "ordinal": 5,
+      "word": "myself",
+      "meaning": "我自己；独自",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 1,
+      "word": "tear",
+      "meaning": "撕开",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 2,
+      "word": "roll",
+      "meaning": "擀；卷",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 3,
+      "word": "fold",
+      "meaning": "折叠",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 4,
+      "word": "glue",
+      "meaning": "胶水；粘贴",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 5,
+      "word": "tape",
+      "meaning": "胶带；用胶带粘",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 6,
+      "word": "show",
+      "meaning": "给……看；展示",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 7,
+      "word": "act",
+      "meaning": "表演；节目",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 8,
+      "word": "juggle",
+      "meaning": "杂耍；抛接多个物体",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 7,
+      "ordinal": 9,
+      "word": "bow",
+      "meaning": "鞠躬",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 8,
+      "ordinal": 1,
+      "word": "built",
+      "meaning": "建好的；建造了",
+      "pending": false
+    },
+    {
+      "week": 1,
+      "day": 8,
+      "ordinal": 2,
+      "word": "dig",
+      "meaning": "挖掘",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 1,
+      "word": "bake",
+      "meaning": "烤",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 2,
+      "word": "hug",
+      "meaning": "拥抱",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 3,
+      "word": "broccoli",
+      "meaning": "西兰花",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 4,
+      "word": "lettuce",
+      "meaning": "生菜",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 5,
+      "word": "corn",
+      "meaning": "玉米",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 6,
+      "word": "chile pepper",
+      "meaning": "辣椒",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 9,
+      "ordinal": 7,
+      "word": "cabbage",
+      "meaning": "甘蓝菜",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 1,
+      "word": "Penny",
+      "meaning": "便士",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 2,
+      "word": "nickel",
+      "meaning": "镍币",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 3,
+      "word": "dime",
+      "meaning": "（美、加）1角",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 4,
+      "word": "Scales",
+      "meaning": "鳞片",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 5,
+      "word": "feather",
+      "meaning": "羽毛",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 6,
+      "word": "spines",
+      "meaning": "刺",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 7,
+      "word": "armor",
+      "meaning": "坚硬的外壳",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 10,
+      "ordinal": 8,
+      "word": "skin",
+      "meaning": "皮肤",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 1,
+      "word": "joined",
+      "meaning": "参加",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 2,
+      "word": "army",
+      "meaning": "军队（陆）",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 3,
+      "word": "nobody",
+      "meaning": "没有人",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 4,
+      "word": "soldiers",
+      "meaning": "士兵（陆）",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 5,
+      "word": "marched",
+      "meaning": "行军",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 6,
+      "word": "Parade",
+      "meaning": "游行",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 7,
+      "word": "kept",
+      "meaning": "keep 的过去式",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 8,
+      "word": "step",
+      "meaning": "脚步",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 9,
+      "word": "stripes",
+      "meaning": "条纹",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 10,
+      "word": "corporal",
+      "meaning": "下士",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 11,
+      "word": "sergeant",
+      "meaning": "军士",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 12,
+      "word": "wanted",
+      "meaning": "want 的过去式",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 11,
+      "ordinal": 13,
+      "word": "instead",
+      "meaning": "代替",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 12,
+      "ordinal": 1,
+      "word": "fed",
+      "meaning": "喂",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 12,
+      "ordinal": 2,
+      "word": "dried",
+      "meaning": "dry 的过去式",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 12,
+      "ordinal": 3,
+      "word": "top",
+      "meaning": "顶端",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 13,
+      "ordinal": 1,
+      "word": "bin",
+      "meaning": "箱子",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 13,
+      "ordinal": 2,
+      "word": "lid",
+      "meaning": "盖子",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 13,
+      "ordinal": 3,
+      "word": "ran",
+      "meaning": "run 的过去式",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 14,
+      "ordinal": 1,
+      "word": "raft",
+      "meaning": "木筏",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 14,
+      "ordinal": 2,
+      "word": "slid",
+      "meaning": "下滑",
+      "pending": false
+    },
+    {
+      "week": 2,
+      "day": 14,
+      "ordinal": 3,
+      "word": "broke",
+      "meaning": "破裂",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "ordinal": 1,
+      "word": "brave",
+      "meaning": "勇敢",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "ordinal": 2,
+      "word": "saw",
+      "meaning": "锯",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 15,
+      "ordinal": 3,
+      "word": "dream",
+      "meaning": "梦；梦想",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 16,
+      "ordinal": 1,
+      "word": "shoot",
+      "meaning": "投射",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 16,
+      "ordinal": 2,
+      "word": "stuck",
+      "meaning": "卡住",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 16,
+      "ordinal": 3,
+      "word": "rang",
+      "meaning": "ring（打电话）的过去式",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 17,
+      "ordinal": 1,
+      "word": "rod",
+      "meaning": "竿",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 17,
+      "ordinal": 2,
+      "word": "net",
+      "meaning": "网",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 17,
+      "ordinal": 3,
+      "word": "weed",
+      "meaning": "杂草",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 18,
+      "ordinal": 1,
+      "word": "took",
+      "meaning": "动词 take 的过去式",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 18,
+      "ordinal": 2,
+      "word": "odd",
+      "meaning": "古怪的",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 18,
+      "ordinal": 3,
+      "word": "upset",
+      "meaning": "心烦烦的",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 19,
+      "ordinal": 1,
+      "word": "began",
+      "meaning": "开始",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 19,
+      "ordinal": 2,
+      "word": "real",
+      "meaning": "真实的",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 19,
+      "ordinal": 3,
+      "word": "Saved",
+      "meaning": "救；救的",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 20,
+      "ordinal": 1,
+      "word": "hamster",
+      "meaning": "仓鼠",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 20,
+      "ordinal": 2,
+      "word": "cage",
+      "meaning": "笼子",
+      "pending": false
+    },
+    {
+      "week": 3,
+      "day": 20,
+      "ordinal": 3,
+      "word": "basket",
+      "meaning": "篮子",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 21,
+      "ordinal": 1,
+      "word": "ago",
+      "meaning": "以前",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 21,
+      "ordinal": 2,
+      "word": "wagon",
+      "meaning": "四轮车；货车",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 21,
+      "ordinal": 3,
+      "word": "paddler",
+      "meaning": "涉水者",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 21,
+      "ordinal": 4,
+      "word": "onions",
+      "meaning": "洋葱",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 22,
+      "ordinal": 1,
+      "word": "stood",
+      "meaning": "stand（站）的过去式",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 22,
+      "ordinal": 2,
+      "word": "curb",
+      "meaning": "路缘石；马路牙子",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 22,
+      "ordinal": 3,
+      "word": "chase",
+      "meaning": "追逐",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 22,
+      "ordinal": 4,
+      "word": "cube",
+      "meaning": "立方体",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 23,
+      "ordinal": 1,
+      "word": "another",
+      "meaning": "另一个",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 23,
+      "ordinal": 2,
+      "word": "shovel",
+      "meaning": "铲",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 23,
+      "ordinal": 3,
+      "word": "grow",
+      "meaning": "种植",
+      "pending": true
+    },
+    {
+      "week": 4,
+      "day": 23,
+      "ordinal": 4,
+      "word": "sold",
+      "meaning": "卖",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 24,
+      "ordinal": 1,
+      "word": "ocean",
+      "meaning": "海洋",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 24,
+      "ordinal": 2,
+      "word": "circus",
+      "meaning": "马戏团",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 24,
+      "ordinal": 3,
+      "word": "land",
+      "meaning": "土地",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 24,
+      "ordinal": 4,
+      "word": "mistake",
+      "meaning": "错误",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 25,
+      "ordinal": 1,
+      "word": "ordered",
+      "meaning": "有序的",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 25,
+      "ordinal": 2,
+      "word": "care",
+      "meaning": "关心",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 25,
+      "ordinal": 3,
+      "word": "alone",
+      "meaning": "独自；单独",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 25,
+      "ordinal": 4,
+      "word": "along",
+      "meaning": "沿着",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 26,
+      "ordinal": 1,
+      "word": "type",
+      "meaning": "类型",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 26,
+      "ordinal": 2,
+      "word": "once",
+      "meaning": "一次",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 26,
+      "ordinal": 3,
+      "word": "van",
+      "meaning": "客货车",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 26,
+      "ordinal": 4,
+      "word": "trunk",
+      "meaning": "行李箱",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 27,
+      "ordinal": 1,
+      "word": "weigh",
+      "meaning": "称重",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 27,
+      "ordinal": 2,
+      "word": "heavy",
+      "meaning": "重的",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 27,
+      "ordinal": 3,
+      "word": "scale",
+      "meaning": "刻度",
+      "pending": false
+    },
+    {
+      "week": 4,
+      "day": 27,
+      "ordinal": 4,
+      "word": "reach",
+      "meaning": "到达",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 28,
+      "ordinal": 1,
+      "word": "peanuts",
+      "meaning": "花生（漫画）",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 28,
+      "ordinal": 2,
+      "word": "being",
+      "meaning": "存在",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 28,
+      "ordinal": 3,
+      "word": "honest",
+      "meaning": "诚实的",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 28,
+      "ordinal": 4,
+      "word": "person",
+      "meaning": "人",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 29,
+      "ordinal": 1,
+      "word": "goldfish",
+      "meaning": "金鱼",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 29,
+      "ordinal": 2,
+      "word": "else",
+      "meaning": "其它",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 29,
+      "ordinal": 3,
+      "word": "pretend",
+      "meaning": "假装",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 29,
+      "ordinal": 4,
+      "word": "hay",
+      "meaning": "干草",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 30,
+      "ordinal": 1,
+      "word": "giddyup",
+      "meaning": "驾",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 30,
+      "ordinal": 2,
+      "word": "fence",
+      "meaning": "护栏",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 30,
+      "ordinal": 3,
+      "word": "swing",
+      "meaning": "秋千",
+      "pending": false
+    },
+    {
+      "week": 5,
+      "day": 30,
+      "ordinal": 4,
+      "word": "seesaw",
+      "meaning": "跷跷板",
+      "pending": false
+    }
+  ],
+  "sceneCount": 22,
+  "imageCount": 22,
+  "sourceNote": "来自已整理的 Day 1–30 单词记录。第 2 周由照片明确标注，其余周次按照片分隔推定；未记录具体学习日期。"
+}
