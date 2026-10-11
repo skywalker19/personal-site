@@ -108,4 +108,4 @@ Commit and push site source changes with:
 npm run publish -- "Add a new Thing"
 ```
 
-The command validates and builds locally, shows the pending changes, asks for confirmation, commits, and pushes. GitHub Actions checks the source and build; it does not deploy. To refresh the static site, the server pulls both repositories, syncs the latest Miller Words source into the site build, and promotes the generated `dist/` using the procedure in [`deploy/SETUP.md`](deploy/SETUP.md).
+The command validates and builds locally, shows the pending changes, asks for confirmation, commits, and pushes personal-site changes. For Miller Words, run `bash ../miller-words/scripts/sync_personal_site.sh` to generate and sync its static pages locally; publish both repositories with `bash ../miller-words/scripts/publish_repos.sh` when ready. The sync and Git publication commands are separate. GitHub Actions checks the source and build; it does not deploy. To refresh the static site on the server, pull both repositories and follow [`deploy/SETUP.md`](deploy/SETUP.md).

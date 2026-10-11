@@ -1,8 +1,9 @@
 {
   "title": "Miller Words · Word notebook",
   "titleZh": "Miller 的单词本",
-  "description": "按 Day 和周次查看词汇积累，打开五篇故事与配图练习。",
+  "description": "按 Day 和周次查看词汇积累，打开 5 篇故事与配图练习。",
   "updated": "2026-10-11",
+  "sourceFingerprint": "6a366003da4087e251095302a50f2dc1e3d384192fd89bed8cfd2e964ec37b71",
   "totalEntries": 140,
   "uniqueWords": 139,
   "sessions": [

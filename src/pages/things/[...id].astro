@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EpisodeSet from "../../components/EpisodeSet.astro";
+import MillerWordsEntry from "../../components/MillerWordsEntry.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 
 export async function getStaticPaths() {
@@ -36,6 +37,9 @@ const typeLabels = { project: "项目", podcast: "播客", writing: "写作", sy
       </div>
     </header>
 
+    {thing.id === "miller-words" ? (
+      <MillerWordsEntry />
+    ) : (
     <div class="thing-body page-shell">
       <aside>
         <p class="kicker">相关主题</p>
@@ -64,6 +68,7 @@ const typeLabels = { project: "项目", podcast: "播客", writing: "写作", sy
         {thing.data.episodes.length > 0 && <EpisodeSet episodes={thing.data.episodes} />}
       </div>
     </div>
+    )}
   </article>
   <div class="back page-shell"><a href="/things/">← 返回全部小事</a></div>
 </BaseLayout>

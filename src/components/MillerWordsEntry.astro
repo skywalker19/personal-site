@@ -1,0 +1,115 @@
+---
+import { millerWordsOverallReport as report } from "../data/miller-words-overall-report";
+const maxEntries = Math.max(...report.sessions.map((session) => session.entryCount));
+const lastDay = Math.max(...report.sessions.map((session) => session.day));
+---
+
+<section class="miller-entry page-shell" aria-labelledby="miller-entry-title">
+  <div class="intro">
+    <div>
+      <p class="kicker">A reading notebook · Day 1–{lastDay}</p>
+      <h2 id="miller-entry-title">从读到的词，走进故事里。</h2>
+      <p class="lead">Miller 把阅读中遇到的新词记下来，再用故事、画面和回忆练习，把“见过”慢慢变成“会用”。</p>
+    </div>
+    <a class="report-link" href="/things/miller-words/report/">打开单词本总览 <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <div class="stats" aria-label="单词本统计">
+    <div><strong>{report.totalEntries}</strong><span>条词语记录</span></div>
+    <div><strong>{report.uniqueWords}</strong><span>个不同词形</span></div>
+    <div><strong>{report.stories.length}</strong><span>篇故事</span></div>
+    <div><strong>{report.sceneCount}</strong><span>幅场景图</span></div>
+  </div>
+
+  <section class="rhythm" aria-labelledby="rhythm-title">
+    <div class="section-heading">
+      <div><p class="kicker">Day by day</p><h3 id="rhythm-title">词汇积累的节奏</h3></div>
+      <span>{report.sessions.length} 天 · {report.weeks.length} 周</span>
+    </div>
+      <ol class="days" style={`--day-count:${report.sessions.length}`} aria-label="每天新增词语数量">
+      {report.sessions.map((session) => (
+        <li title={`${session.label}：${session.entryCount} 条记录`}>
+          <span class="bar" style={`--bar-height:${Math.max(10, Math.round(session.entryCount / maxEntries * 100))}%`}></span>
+          <span class="day">{session.day}</span>
+        </li>
+      ))}
+    </ol>
+    <p class="chart-note">每根线代表一天的记录数量。周次中，第 2 周来自明确标注，其余按记录分段推定。</p>
+  </section>
+
+  <div class="stories-heading">
+    <div><p class="kicker">Read & remember</p><h3>{report.stories.length} 个故事，继续练习</h3></div>
+    <a href="/things/miller-words/report/#memory-exam">进入单词配对练习 ↗</a>
+  </div>
+  <div class="stories">
+    {report.stories.map((story) => (
+      <article class="story">
+        <a class="story-main" href={`/things/miller-words/episodes/${story.id}/html/${story.id}.html`}>
+          <img src={`/things/miller-words/episodes/${story.id}/cartoon/${story.cover}`} alt={story.coverAlt} width="1536" height="1024" loading="lazy" />
+          <div class="story-copy">
+            <span class="story-meta">{story.id.replace("story-", "STORY ").toUpperCase()} · DAY {story.startDay}–{story.endDay}</span>
+            <h4>{story.titleZh}</h4>
+            <p lang="en">{story.title}</p>
+            <span class="story-cta">阅读故事 <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+        {story.hasPdf && <a class="print-link" href={`/things/miller-words/episodes/${story.id}/pdf/${story.id}.pdf`}>打印版 PDF ↗</a>}
+      </article>
+    ))}
+  </div>
+  <p class="updated">数据更新于 {report.updated} · 内容由单词本和故事记录生成</p>
+</section>
+
+<style>
+  .miller-entry { padding-block: 88px 120px; }
+  .intro { display: flex; align-items: end; justify-content: space-between; gap: 36px; padding-bottom: 48px; border-bottom: 1px solid var(--line); }
+  .kicker { margin: 0 0 14px; color: var(--gold); font: 10px var(--utility); letter-spacing: .12em; text-transform: uppercase; }
+  h2, h3, h4 { font-family: var(--display); font-weight: 400; }
+  h2 { max-width: 700px; margin: 0; font-size: clamp(36px, 5vw, 58px); letter-spacing: -.045em; line-height: 1.15; }
+  .lead { max-width: 660px; margin: 20px 0 0; color: var(--ink-soft); font-size: 17px; line-height: 1.8; }
+  .report-link, .stories-heading > a { flex: 0 0 auto; padding-bottom: 5px; border-bottom: 1px solid var(--gold); font: 11px var(--utility); letter-spacing: .03em; text-decoration: none; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 0 74px; border-bottom: 1px solid var(--line); }
+  .stats div { display: flex; align-items: baseline; gap: 12px; padding: 25px 14px 25px 0; }
+  .stats strong { font: 38px/1 var(--display); color: var(--ink); }
+  .stats span { color: var(--ink-soft); font-size: 12px; }
+  .rhythm { padding: 30px; background: var(--paper-raised); border: 1px solid var(--line); }
+  .section-heading, .stories-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+  .section-heading h3, .stories-heading h3 { margin: 0; font-size: 31px; letter-spacing: -.03em; }
+  .section-heading > span, .chart-note { color: var(--ink-soft); font-size: 12px; }
+  .days { display: grid; grid-template-columns: repeat(var(--day-count), minmax(0, 1fr)); gap: 7px; align-items: end; height: 138px; margin: 28px 0 0; padding: 0; list-style: none; }
+  .days li { display: flex; flex-direction: column; align-items: center; justify-content: end; gap: 8px; height: 100%; color: var(--ink-soft); font: 9px var(--utility); }
+  .bar { display: block; width: min(100%, 15px); height: var(--bar-height); min-height: 4px; background: color-mix(in srgb, var(--gold) 70%, var(--paper)); border-radius: 8px 8px 2px 2px; }
+  .chart-note { margin: 18px 0 0; }
+  .stories-heading { margin: 78px 0 24px; }
+  .stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .story { overflow: hidden; color: inherit; background: var(--paper-raised); border: 1px solid var(--line); transition: border-color .2s, transform .2s; }
+  .story:hover { transform: translateY(-2px); border-color: var(--gold); }
+  .story-main { display: grid; grid-template-columns: minmax(130px, .8fr) 1fr; min-height: 210px; color: inherit; text-decoration: none; }
+  .story img { width: 100%; height: 100%; min-height: 210px; aspect-ratio: 4 / 3; object-fit: cover; }
+  .story-copy { display: flex; flex-direction: column; align-items: start; padding: 22px; }
+  .story-meta { color: var(--gold); font: 9px var(--utility); letter-spacing: .09em; }
+  .story h4 { margin: 18px 0 4px; font-size: 24px; line-height: 1.25; }
+  .story-copy p { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
+  .story-cta { display: inline-flex; gap: 7px; margin-top: auto; padding-top: 22px; font: 10px var(--utility); }
+  .print-link { display: inline-block; margin: 0 20px 16px; color: var(--ink-soft); font: 10px var(--utility); text-underline-offset: 4px; }
+  .updated { margin: 28px 0 0; color: var(--ink-soft); font: 10px var(--utility); text-align: right; }
+  @media (max-width: 760px) {
+    .miller-entry { padding-block: 60px 80px; }
+    .intro { display: block; }
+    .report-link { display: inline-block; margin-top: 26px; }
+    .stats { grid-template-columns: repeat(2, 1fr); margin-bottom: 48px; }
+    .stats div { padding-block: 18px; }
+    .stats strong { font-size: 32px; }
+    .rhythm { padding: 22px 14px; }
+    .days { gap: 3px; height: 116px; }
+    .days li { font-size: 7px; }
+    .stories-heading { align-items: start; flex-direction: column; margin-top: 56px; }
+    .stories { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 430px) {
+    .story-main { grid-template-columns: 112px 1fr; min-height: 178px; }
+    .story img { min-height: 178px; }
+    .story-copy { padding: 16px 14px; }
+    .story h4 { margin-top: 12px; font-size: 20px; }
+  }
+</style>
