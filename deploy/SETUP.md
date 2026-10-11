@@ -29,8 +29,8 @@ Miller Words checkout.
 
 ```bash
 BUILD_ROOT="$(mktemp -d)"
-git clone --branch main --depth 1 git@github.com:skywalker19/home-site.git "$BUILD_ROOT/personal-site"
-git clone --branch main --depth 1 git@github.com:skywalker19/miller-words.git "$BUILD_ROOT/miller-words"
+git clone --branch main --depth 1 https://github.com/skywalker19/home-site.git "$BUILD_ROOT/personal-site"
+git clone --branch main --depth 1 https://github.com/skywalker19/miller-words.git "$BUILD_ROOT/miller-words"
 
 cd "$BUILD_ROOT/miller-words"
 python3 scripts/make_overall_report.py
