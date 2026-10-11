@@ -27,5 +27,5 @@ git commit -m "$message"
 git push origin main
 
 echo
-echo "Published to GitHub. The deployment workflow is now running."
-echo "Follow it at: https://github.com/skywalker19/home-site/actions"
+echo "Published source to GitHub. GitHub Actions will run build checks only."
+echo "To update the live site, run the server-side build and release steps in deploy/SETUP.md."

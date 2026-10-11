@@ -100,12 +100,12 @@ This repository is the canonical owner of the public Xiaoerduo growth story:
 
 When updating the story, verify every date and metric against the podcast evidence, preserve the source filename in the public data, and copy only approved web-ready derivatives into `public/`. Do not maintain a second standalone implementation in the podcast workspace.
 
-## Publish
+## Publish source for the server-side build
 
-After the one-time server and GitHub setup in [`deploy/SETUP.md`](deploy/SETUP.md):
+Commit and push site source changes with:
 
 ```bash
 npm run publish -- "Add a new Thing"
 ```
 
-The command validates and builds locally, shows the pending changes, asks for confirmation, commits, and pushes. GitHub Actions then deploys a versioned release and switches the nginx `current` symlink.
+The command validates and builds locally, shows the pending changes, asks for confirmation, commits, and pushes. GitHub Actions checks the source and build; it does not deploy. To refresh the static site, the server pulls both repositories, syncs the latest Miller Words source into the site build, and promotes the generated `dist/` using the procedure in [`deploy/SETUP.md`](deploy/SETUP.md).

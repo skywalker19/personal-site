@@ -9,7 +9,7 @@ server {
         try_files $uri $uri/ /drip-monitor/index.html;
     }
 
-    # GitHub Actions updates this symlink after a successful build.
+    # The server-side release procedure updates this symlink after a successful build.
     location / {
         root /var/www/personal-site/current;
         index index.html;
