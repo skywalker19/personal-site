@@ -8,7 +8,7 @@ committed before this server release step.
 
 ## Requirements
 
-- Git read access to `skywalker19/home-site`.
+- Git read access to `skywalker19/personal-site`.
 - Node.js 22, npm, and rsync or `cp` on the server.
 - A server account that can write to `/var/www/personal-site/releases/` and
   update `/var/www/personal-site/current`.
@@ -26,7 +26,7 @@ For each release, use a fresh temporary directory:
 
 ```bash
 BUILD_ROOT="$(mktemp -d)"
-git clone --branch main --depth 1 https://github.com/skywalker19/home-site.git "$BUILD_ROOT/personal-site"
+git clone --branch main --depth 1 https://github.com/skywalker19/personal-site.git "$BUILD_ROOT/personal-site"
 cd "$BUILD_ROOT/personal-site"
 npm ci
 npm run check:sensitive
