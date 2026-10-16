@@ -6,7 +6,7 @@ import MillerWordsEntry from "../../components/MillerWordsEntry.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 
 export async function getStaticPaths() {
-  const things = await getCollection("things", ({ data }) => !data.draft);
+  const things = await getCollection("things", ({ data, id }) => !data.draft && id !== "majiang");
   return things.map((thing) => ({ params: { id: thing.id }, props: { thing } }));
 }
 
