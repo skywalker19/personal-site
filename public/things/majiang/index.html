@@ -751,6 +751,37 @@ body.fullscreen-fallback { position: fixed; z-index: 100; inset: 0; width: 100%;
   .header-actions { width: 100%; justify-content: flex-end; }
 }
 
+@media (max-width: 759px) {
+  .setup-screen {
+    padding: max(12px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom));
+  }
+  .brand-header { gap: 12px; margin-bottom: 16px; }
+  .brand-tile { width: 48px; height: 58px; font-size: 29px; }
+  #setup-form { gap: 12px; }
+  .setup-fieldset { padding: 12px; }
+  .seat-setup-map { width: min(68vw, 290px); margin: 16px auto 8px; }
+  .field-hint { margin-bottom: 10px; line-height: 1.4; }
+  .setting-row { min-height: 58px; }
+
+  .dashboard-screen {
+    min-height: 100svh;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  }
+  .table-stage { min-height: 310px; padding: 10px 0; }
+  .mahjong-table { width: min(68vw, 280px); min-width: 220px; }
+  .round-actions { gap: 8px; }
+  .round-actions button { min-height: 48px; padding-inline: 10px; }
+  .rule-strip { gap: 10px; margin-top: 10px; }
+  .rule-strip span + span::before { margin-right: 10px; }
+}
+
+@media (max-height: 700px) and (max-width: 759px) {
+  .dashboard-screen { padding-block: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-bottom)); }
+  .table-stage { min-height: 280px; padding-block: 8px; }
+  .mahjong-table { width: min(64vw, 235px); min-width: 205px; }
+  .player-card { min-height: 64px; padding: 7px 9px; }
+}
+
 @media (min-width: 760px) {
   .setup-screen { padding-inline: 36px; }
   .dashboard-screen { padding: 32px 40px; }
@@ -1748,6 +1779,7 @@ function renderSettlementPreview() {
   const target = $('#settlement-preview-list');
   const confirmButton = $('#confirm-settlement');
   const error = $('#settlement-error');
+  const availableWinTypes = getConfiguredWinTypes(match.winTypeSettings).filter(({ enabled }) => enabled);
   target.innerHTML = '';
   error.textContent = '';
   let result = null;
